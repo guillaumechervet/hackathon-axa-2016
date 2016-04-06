@@ -1,0 +1,78 @@
+﻿
+<ol class="breadcrumb">
+    <li><a href="/">Accueil</a></li>
+  <li class="active">Paramètres Similarités</li>
+</ol>
+<h1>Paramètres similarités</h1>
+ <form name="form" role="form" class="form-horizontal" enctype="multipart/form-data" novalidate mw-submit="vm.submit(form)">
+                    <h2>Formulaire</h2>
+                  
+                        <div class="form-group" mw-container="form.uTitle">
+                            <label class="col-sm-3 control-label">Titre* : </label>
+                            <div class="col-sm-4">
+                                <input type="text"  name="uTitle" ng-model="vm.Model.Title" class="form-control" mw-validate="vm.Rules.Title" />
+                                <span mw-error="form.uTitle"></span>
+                            </div>
+                        </div>
+                        <div class="form-group" mw-container="form.uDate">
+                            <label class="col-sm-3 control-label">Date* : </label>
+                            <div class="col-sm-4">
+                                <input type="text" name="uDate" ng-model="vm.Model.Date" class="form-control" uib-datepicker-popup="dd/MM/yyyy" mw-validate="vm.Rules.Date" />
+                                <span mw-error="form.uDate"></span>
+                            </div>
+                        </div>
+                        <div class="form-group" mw-container="form.uComment">
+                            <label class="col-sm-3 control-label">Commentaire : </label>
+                            <div class="col-sm-4">
+                                 <textarea ng-model="vm.Model.Comment" class="form-control" id="uComment" name="uComment" rows="4" cols="30" mw-validate="vm.Rules.Comment"></textarea>
+                                <span mw-error="form.uComment"></span>
+                            </div>
+                        </div>
+                        <div  ng-repeat="data in vm.Model.Datas">
+                            <div class="form-group" mw-container="form[data.Key]">
+                                <label class="col-sm-3 control-label">{{data.Key}}* : </label>
+                                <div class="col-sm-4">
+                                    <input type="text" name="{{data.Key}}" ng-model="data.Value" class="form-control" mw-validate="['required','digit']" />
+                                    <span mw-error="form[data.Key]"></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                     <div class="form-group">
+                            <div class="col-sm-3"> </div>
+                            <div class="col-sm-4">
+                                <button type="submit" class="btn btn-success">Ajouter</button>
+                            </div>
+                        </div>
+</form>
+
+
+    <h2>Imports</h2>
+<div ng-if="vm.Similarities.length >0">
+
+    <table class="table" >
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Date</th>
+                <th>Commentaire</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="height-20" ng-repeat="supplier in vm.Similarities">
+                <td>{{supplier.Title}}</td>
+                <td>{{supplier.Date  | date:'dd/MM/yyyy' }}</td>
+                <td>{{supplier.Comment}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div ng-if="vm.Similarities.length<=0" class="oeup-empty">
+    <p>Aucun import similarité.</p>
+</div>
+
+<ol class="breadcrumb">
+  <li><a href="/">Accueil</a></li>
+  <li class="active">Paramètres Similarités</li>
+</ol>

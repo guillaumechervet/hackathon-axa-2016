@@ -1,0 +1,62 @@
+﻿<ol class="breadcrumb">
+        <li><a href="/">Accueil</a></li>
+  <li><a href="/projets">Projets</a></li>
+  <li class="active">Projet {{vm.Project.Title}}</li>
+</ol>
+<h1>Projet {{vm.Project.Title}}</h1>
+<h2>Informations</h2>
+<div class="row">
+    <div class="col-sm-6">
+        Titre : {{vm.Project.Title}}
+        Commentaire : {{vm.Project.Comment}}
+        Version : {{vm.Project.Version}}
+        Date : {{vm.Project.Date | date:'dd/MM/yyyy' }}
+        GENARTNR : {{vm.Project.Connector}}
+        Paramètres Similarité :  {{vm.Project.SimilarityId}}
+    </div>
+    <div class="col-sm-6">
+        Equipementiers Premium
+        {{vm.Project.Suppliers}}
+    </div>
+</div>
+
+
+<h2>Exports</h2>
+<table class="table" ng-if="vm.Project.Exports.length >0">
+    <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Commentaire</th>
+            <th>Date</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="height-20" ng-repeat="export in vm.Project.Exports">
+            <td>{{export.Title}}</td>
+            <td>{{export.Comment}}</td>
+            <td>{{export.Date | date:'dd/MM/yyyy' }}</td>
+            <td>
+                <button type="button" class="btn btn-default"  uib-popover="Télécharger" popover-trigger="mouseenter"><span class="glyphicon glyphicon-download" /></button>
+                <button type="button" class="btn btn-primary" uib-popover="Visualiser" popover-trigger="mouseenter"><span class="glyphicon glyphicon-edit" /></button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div ng-if="vm.Project.Exports.length <=0" class="oeup-empty">
+    <p>Aucun export.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+      <button type="button" class="btn btn-primary pull-right" ng-if="vm.Project.State === 0" ng-click="vm.calculate(vm.Project.Id)">Lancer le calcul</button>
+	  <button type="button" class="btn btn-primary pull-right" ng-if="vm.Project.State === 2" ng-click="vm.navAdd(vm.Project.Id)">Ajouter</button>
+</div>      
+</div>
+
+<ol class="breadcrumb">
+        <li><a href="/">Accueil</a></li>
+  <li><a href="/projets">Projets</a></li>
+  <li class="active">Projet {{vm.Project.Title}}</li>
+</ol>

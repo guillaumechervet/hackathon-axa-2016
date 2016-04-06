@@ -1,0 +1,81 @@
+﻿
+<script type="text/ng-template" id="breadcrumbManufacturerTransco.html">
+    <ol class="breadcrumb">
+    <li><a href="/">Accueil</a></li>
+    <li class="active">Transco constructeurs OA</li>
+    </ol>
+</script>
+
+<div ng-include="'breadcrumbManufacturerTransco.html'"></div>
+
+<h1>Transco constructeurs OA</h1>
+
+
+<form name="formAdd" role="form" class="form-horizontal" enctype="multipart/form-data" novalidate mw-submit="vm.add(formAdd)">
+                    <h2>Ajouter un élément</h2>
+                  
+                        <div class="form-group oeup-typeahead" mw-container="formAdd.uSource">
+                            <label class="col-sm-3 control-label">Source OA* : </label>
+                            <div class="col-sm-4">
+                                <input type="text"  name="uSource" ng-model="vm.Model.Transco" class="form-control" mw-validate="vm.getTranscoRules(vm.Model)" oeup-uppercased />
+                                <span mw-error="formAdd.uSource"></span>
+                            </div>
+                        </div>
+                        <div class="form-group oeup-typeahead" mw-container="formAdd.uDest">
+                            <label class="col-sm-3 control-label">Label TecDoc* : </label>
+                           <div class="col-sm-4">
+                                 <input type="text" name="uDest" ng-model="vm.Model.Label" uib-typeahead="sr.Label for sr in vm.ManufacturersReference | filter:$viewValue | limitTo:8"  class="form-control" mw-validate="vm.getLabelRules(vm.Model)" oeup-uppercased /></td>
+                                <span mw-error="formAdd.uDest"></span>
+                            </div>
+                        </div>
+                        
+                     <div class="form-group">
+                            <div class="col-sm-3"> </div>
+                            <div class="col-sm-4">
+                                <button type="submit" class="btn btn-success">Ajouter</button>
+                            </div>
+                        </div>
+</form>
+
+
+<div ng-if="vm.Transcos.length >0">
+<form name="form" role="form" class="form-horizontal" enctype="multipart/form-data" novalidate mw-submit="vm.submit(form)">
+<h2>Transcodifications</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Source OA</th>
+            <th>Label TecDoc</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="height-20" ng-repeat="transco in vm.Transcos">
+            <td>
+                <span ng-bind="transco.Transco" ></span>
+            </td>
+            <td>
+                 <span ng-bind="transco.Label" ></span>
+            <td>
+                <button ng-click="vm.remove(transco)" type="button" class="btn btn-danger" uib-popover="Supprimer" popover-trigger="mouseenter"><span class="glyphicon glyphicon-remove" /></button>
+                
+            </td>
+        </tr>
+        
+    </tbody>
+</table>
+
+ <div class="form-group">
+                            <div class="col-sm-3"> </div>
+                            <div class="col-sm-4">
+                                <button type="submit" class="btn btn-success">Sauvegarder</button>
+                            </div>
+                        </div>
+</form>
+</div>
+
+<div ng-if="vm.Synonymes.length <=0" class="oeup-empty">
+    <p>Aucun synonyme.</p>
+</div>
+
+<div ng-include="'breadcrumbManufacturerTransco.html'"></div>

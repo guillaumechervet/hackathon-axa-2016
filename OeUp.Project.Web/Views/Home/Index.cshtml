@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html lang="fr" ng-app="myapp" ng-strict-di>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=yes">
+    <title>OE'up</title>
+     <link rel="icon" type="image/png" href="~/images/icon.png" />
+    <link href="/lib/mycode.min.css?v=1455865741219850679" rel="stylesheet" />
+    <link href="/lib/vendor.min.css?v=1455865741219850679" rel="stylesheet" />
+    <link href="/app/socle/loader.css" rel="stylesheet" />
+     <base href="/">
+     <link rel="canonical" href="/" />
+     
+
+</head>
+<body>
+<div ng-include="'/app/menu/menu.html'"></div>
+<div ng-view class="container-fluid ng-cloak">
+</div>
+
+<div id="loading-layer" ng-show="loader.isLoading"></div>
+<div id="loading" ng-show="loader.isLoading">
+    <div id="circularG">
+        <div id="circularG_1" class="circularG"></div>
+        <div id="circularG_2" class="circularG"></div>
+        <div id="circularG_3" class="circularG"></div>
+        <div id="circularG_4" class="circularG"></div>
+        <div id="circularG_5" class="circularG"></div>
+        <div id="circularG_6" class="circularG"></div>
+        <div id="circularG_7" class="circularG"></div>
+        <div id="circularG_8" class="circularG"></div>
+    </div>
+    <span ng-bind="loader.message">Chargement...</span>
+</div>
+
+<footer  role="contentinfo">
+     <div class="container"> 
+         <p>Copyright Mobivia Group 
+         </p>
+     </div> 
+</footer>
+
+<script type="text/ng-template" id="input-xlsx.html">
+
+<style>
+        .drop{
+            border:2px dashed #bbb;
+            -moz-border-radius:5px;
+            -webkit-border-radius:5px;
+            border-radius:5px;
+            padding:25px;
+            text-align:center;
+            font:20pt bold,"Vollkorn";color:#bbb;
+            width: 100%;
+        }
+        
+        .drop:hover{
+            border:2px dashed black;
+            background-color: #bbb;
+            color:black;
+        }
+        
+        .fileUpload {
+            position: relative;
+            overflow: hidden;
+            width: 160px;
+            height: 34px;
+            }
+            .fileUpload input.upload {
+                position: absolute;
+                top: 0;
+                right: 0;
+                margin: 0;
+                padding: 0;
+                font-size: 20px;
+                cursor: pointer;
+                opacity: 0;
+                filter: alpha(opacity=0);
+            }
+
+            .fileUploaded {
+              /*  font-size: 3em;*/
+                color: green;
+                /* float: right; */
+                border-color: green;
+            }
+    </style>
+
+    <div class="drop" ng-class="[{fileUploaded: file.text}]">
+          <span ng-if="!file.text">Déposer votre fichier Excel</span>
+          <span class="glyphicon glyphicon-file fileUploaded" aria-hidden="true" ng-if="file.text">{{file.text}}</span>
+    </div>
+    <p>
+        <div class="fileUpload btn btn-default">
+        <span>Charger un fichier</span>
+        <input type="file" name="xlfile" class="xlf upload"  accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel,text/comma-separated-values, text/csv, application/csv" />
+    </p> 
+</div>
+       
+</script>
+
+<environment names="Development">
+  
+    <script type="text/javascript" src="lib/jquery/jquery.js"></script>
+                    <script type="text/javascript" src="lib/toastr/toastr.js"></script>
+                    
+                    <script src="lib//js-xlsx/shim.js"></script>
+<script src="lib/js-xlsx/jszip.js"></script>
+<script src="lib/js-xlsx/xlsx.js"></script>
+<!-- uncomment the next line here and in xlsxworker.js for ODS support -->
+<script src="lib/js-xlsx/ods.js"></script>
+                    
+                    <script type="text/javascript" src="lib/angular/angular.min.js"></script>
+                    <script type="text/javascript" src="lib/angular-animate/angular-animate.min.js"></script>
+                    <script type="text/javascript" src="lib/angular-route/angular-route.min.js"></script>
+                    <script type="text/javascript" src="lib/bootstrap/bootstrap.min.js"></script>
+                    <script type="text/javascript" src="lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+                    <script type="text/javascript" src="lib/ng-file-upload-shim/ng-file-upload-shim.js"></script>
+                    <script type="text/javascript" src="lib/ng-file-upload/ng-file-upload.js"></script>
+                    
+                    
+                    
+                    
+    
+    
+    <script type="text/javascript" src="oldlib/globalize/globalize.js"></script>
+                    <script type="text/javascript" src="oldlib/globalize/cultures/globalize.culture.fr.js"></script>
+                    <script type="text/javascript" src="lib/mw.validation/mw.validation.js"></script>
+                    <script type="text/javascript" src="lib/mw.angular.validation/sources/app.js"></script>
+                    <script type="text/javascript" src="lib/mw.angular.validation/sources/mwContainer-directive.js"></script>
+                    <script type="text/javascript" src="lib/mw.angular.validation/sources/mwError-directive.js"></script>
+                    <script type="text/javascript" src="lib/mw.angular.validation/sources/mwSubmit-directive.js"></script>
+                    <script type="text/javascript" src="lib/mw.angular.validation/sources/mwValidate-directive.js"></script>
+    
+    
+    <script type="text/javascript" src="app/app.js?v=1455865741219850679"></script>
+    <script type="text/javascript" src="app/templates.js?v=1455865741219850679"></script>
+    <script type="text/javascript" src="app/run.js?v=1455865741219850679"></script>
+        <script type="text/javascript" src="app/socle/MwExcelDirective.js?v=1455865741219850679"></script>
+         <script type="text/javascript" src="app/socle/UppercaseDirective.js?v=1455865741219850679"></script>
+    <script type="text/javascript" src="app/socle/loader-service.js?v=1455865741219850679"></script>
+    <script type="text/javascript" src="app/socle/httpException-interceptor.js?v=1455865741219850679"></script>
+    <script type="text/javascript" src="app/socle/httpLoader-interceptor.js?v=1455865741219850679"></script>
+    <script type="text/javascript" src="app/socle/httpDate-interceptor.js?v=1455865741219850679"></script>
+    <script type="text/javascript" src="app/project/ProjectService.js?v=1455865741219850679"></script>
+    <script type="text/javascript" src="app/menu/MenuController.js?v=1455865741219850679"></script>
+    <script type="text/javascript" src="app/home/HomeController.js?v=1455865741219850679"></script>
+    <script type="text/javascript" src="app/project/ProjectsController.js?v=1455865741219850679"></script>
+    <script type="text/javascript" src="app/project/ProjectController.js?v=1455865741219850679"></script>
+    <script type="text/javascript" src="app/project/EnumProjectState.js"></script>
+    <script type="text/javascript" src="app/project/AddProjectController.js?v=1455865741219850679"></script>
+    <script type="text/javascript" src="app/project/Export/AddExportController.js?v=1455865741219850679"></script>
+    <script type="text/javascript" src="app/configuration/similarity/AddSimilarityController.js?v=1455865741219850679"></script>
+    <script type="text/javascript" src="app/configuration/manufacturerSynonyme/ManufacturerSynonymeService.js?v=1455865741219850679"></script>
+    <script type="text/javascript" src="app/configuration/manufacturerSynonyme/ManufacturerSynonymeController.js?v=1455865741219850679"></script>
+<script type="text/javascript" src="app/configuration/supplier/SupplierController.js"></script>
+<script type="text/javascript" src="app/configuration/supplier/SupplierService.js"></script>
+<script type="text/javascript" src="app/configuration/ConfigurationService.js"></script>
+<script type="text/javascript" src="app/configuration/similarity/SimilarityService.js"></script>
+ <script type="text/javascript" src="app/configuration/manufacturerTransco/ManufacturerTranscoService.js?v=1455865741219850679"></script>
+    <script type="text/javascript" src="app/configuration/manufacturerTransco/ManufacturerTranscoController.js?v=1455865741219850679"></script>
+
+<script type="text/javascript" src="app/configuration/refoe/RefOeController.js"></script>
+<script type="text/javascript" src="app/configuration/refoe/RefOeService.js"></script>
+
+</environment>
+<environment names="Staging,Production">
+     <!-- <script type="text/javascript" src="lib/vendor.min.js?v=1455865741219850679"></script>
+    
+     <script type="text/javascript" src="lib/mycode.min.js?v=1455865741219850679"></script>-->
+
+</environment>
+</body>
+
+</html>

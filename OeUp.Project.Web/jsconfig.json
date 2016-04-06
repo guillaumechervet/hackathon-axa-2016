@@ -1,0 +1,14 @@
+{
+    "exclude": [
+        "node_modules",
+        "bower_components",
+         "wwwroot/lib",
+        "ext",
+        "overrides",
+        "resources",
+        "sass",
+        "build",
+        "packages",
+        "help"
+    ]
+}

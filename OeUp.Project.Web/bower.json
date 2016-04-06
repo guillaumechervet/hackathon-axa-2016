@@ -1,0 +1,42 @@
+{
+  "name": "bower",
+  "license": "Apache-2.0",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "3.3.2",
+    "angular": "1.5.0",
+    "angular-animate": "1.5.0",
+    "angular-route": "1.5.0",
+    "angular-sanitize": "~1.5.0",
+    "angular-bootstrap": "~1.1.1",
+    "components-font-awesome": "~4.4.0",
+    "toastr": "~2.1.2",
+    "DefinitelyTyped": "*",
+    "mw.angular.validation": "*",
+    "mw.validation": "*",
+    "ng-file-upload": "^12.0.4",
+    "ng-file-upload-shim": "^12.0.4",
+    "globalize": "^1.1.1",
+    "js-xlsx": "^0.8.0"
+  },
+  "exportsOverride": {
+    "js-xlsx": {
+      "": "*.*"
+    },
+    "bootstrap": {
+      "": "dist/**/*.*"
+    },
+    "angular": {
+      "": "angular{.js,.min.js,.min.js.map, .min.js.gzip}"
+    },
+    "angular-animate": {
+      "": "angular-animate{.js,.min.js,.min.js.map}"
+    },
+    "angular-route": {
+      "": "angular-route{.js,.min.js,.min.js.map}"
+    },
+    "angular-bootstrap": {
+      "": "*.*"
+    }
+  }
+}

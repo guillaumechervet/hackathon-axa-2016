@@ -1,0 +1,94 @@
+﻿
+
+<style>
+   .thumb {
+    width: 24px;
+    height: 24px;
+    float: none;
+    position: relative;
+    top: 7px;
+}
+
+form .progress {
+    line-height: 15px;
+}
+
+.progress {
+    display: inline-block;
+    width: 100px;
+    border: 3px groove #CCC;
+}
+
+.progress div {
+    font-size: smaller;
+    background: orange;
+    width: 0;
+}
+    </style>
+
+<ol class="breadcrumb">
+  <li><a href="/">Projets</a></li>
+  <li class="active">Equipementiers PREMIUM</li>
+</ol>
+<h1>Equipementiers PREMIUM</h1>
+<a href="/api/file/download" target="_blank">Export complet du référentiel</a>
+
+
+<form method="post" action="/api/file/upload" enctype="multipart/form-data">
+        <input type="file" name="files" multiple="multiple" >
+    
+    <input type="submit" value="Upload" />
+</form>
+
+<div  ng-controller="MyCtrl">
+  <h4>Upload on file select</h4>
+  <button ngf-select="uploadFiles($files, $invalidFiles)" class="btn btn-primary" multiple
+          accept="image/*" ngf-max-height="1000" ngf-max-size="1MB">
+      Select Files</button>
+  <br><br>
+  Files:
+  <ul>
+    <li ng-repeat="f in files" style="font:smaller">{{f.name}} {{f.$errorParam}}
+      <span class="progress" ng-show="f.progress >= 0">
+        <div style="width:{{f.progress}}%"  ng-bind="f.progress + '%'"></div>
+         <uib-progressbar max="100" value="f.progress"><span>{{f.progress}} %</span></uib-progressbar> 
+      </span>
+    </li>
+    <li ng-repeat="f in errFiles" style="font:smaller">{{f.name}} {{f.$error}} {{f.$errorParam}}
+    </li> 
+  </ul>
+  {{errorMsg}}
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Version BDA</th>
+            <th>Commentaire</th>
+            <th>Etat</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="height-20" ng-repeat="animal in vm.Animals">
+            <td><a href="#/home/overview/details/{{animal.Id}}">{{animal.AnimalName}}</a></td>
+            <td>{{animal.Speed}}</td>
+            <td>{{animal.Speed}}</td>
+            <td>{{animal.Speed}}</td>
+            <td>
+                <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-edit" /></button>
+                <button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove" /></button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div>
+	<button type="button" class="btn btn-primary pull-right">Ajouter</button>
+</div>
+
+<ol class="breadcrumb">
+  <li><a href="/">Projets</a></li>
+  <li class="active">Equipementiers PREMIUM</li>
+</ol>
