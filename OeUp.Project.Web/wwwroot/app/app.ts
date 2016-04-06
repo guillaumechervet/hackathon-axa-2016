@@ -38,7 +38,12 @@ module oeup {
 			    templateUrl: '/app/search/result/index.html',
 			    controller: 'ResultController',
                 controllerAs: 'vm'
-		    })      
+		    })
+            .when('/valider', {
+			    templateUrl: '/app/search/validate/index.html',
+			    controller: 'ValidateController',
+                controllerAs: 'vm'
+		    })
             .when('/proposer', {
 			    templateUrl: '/app/propose/index.html',
 			    controller: 'ProposeController',
