@@ -11,6 +11,8 @@ module oeup {
     export class ProposeController {
          public Biens : Array<IBien>;
          public navAdd : Function;
+         public edit : Function;
+         public remove : Function;
           
         constructor($scope: any, $location: ng.ILocationService, $log: ng.ILogService) {
             var vm = this;
@@ -53,7 +55,13 @@ module oeup {
             
             vm.navAdd = function(){
                 $location.path('/proposer/ajouter');
-            }
+            };
+            vm.edit = function(){
+                $location.path('/proposer/modifier');
+            };
+            vm.remove = function(){
+                $location.path('/proposer');
+            };
         }
     }
 
