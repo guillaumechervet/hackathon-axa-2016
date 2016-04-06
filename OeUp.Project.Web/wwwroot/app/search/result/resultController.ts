@@ -1,5 +1,5 @@
 /// <reference path="../../../../bower_components/DefinitelyTyped/angularjs/angular.d.ts"/>
-
+declare var _:any; // hacky hacky ^^
 module oeup {
     'use strict';
 
@@ -8,6 +8,7 @@ module oeup {
     }
 
     export class ResultController {
+          public map:any;
 
         constructor($scope: any, $location: ng.ILocationService, $log: ng.ILogService,uiGmapGoogleMapApi:any) {
             var vm = this;
@@ -21,6 +22,8 @@ module oeup {
                     _.object = _.zipObject;
                 }
                 
+                
+                this.map =  {center: { latitude: 48.8965812, longitude: 2.318375999999944 }, zoom: 13, pointList: [], options: {streetViewControl: false}};
             });
             
         }

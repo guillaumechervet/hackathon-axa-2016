@@ -60,11 +60,22 @@
 
 
   $templateCache.put('/wwwroot/app/propose/index.html',
-    "<div class=\"row\"><h1>Proposer</h1></div>"
+    "<script type=\"text/ng-template\" id=\"breadcrumbProposer.html\"><ol class=\"breadcrumb\">\r" +
+    "\n" +
+    "    <li><a href=\"/\">Accueil</a></li>\r" +
+    "\n" +
+    "    <li class=\"active\">Proposer</li>\r" +
+    "\n" +
+    "    </ol></script><div ng-include=\"'breadcrumbProposer.html'\"></div><h1>Proposer vos biens</h1><div ng-if=\"vm.Biens.length >0\"><h2>Liste des biens</h2><table class=\"table\"><thead><tr><th>Titre</th><th>Date</th><th>Action</th></tr></thead><tbody><tr class=\"height-20\" ng-repeat=\"bien in vm.Biens\"><td><span ng-bind=\"bien.Titre\"></span></td><td><span>{{bien.DateDebut | date:'dd/MM/yyyy' }}</span> <span>{{bien.DateFin | date:'dd/MM/yyyy' }}</span></td><td><button ng-click=\"vm.remove(bien)\" type=\"button\" class=\"btn btn-danger\" uib-popover=\"Supprimer\" popover-trigger=\"mouseenter\"><span class=\"glyphicon glyphicon-remove\"></button></td></tr></tbody></table></div><div ng-if=\"vm.Biens.length <=0\" class=\"oeup-empty\"><p>Aucun bien déclaré.</p></div><div ng-include=\"'breadcrumbProposer.html'\"></div>"
   );
 
 
   $templateCache.put('/wwwroot/app/search/index.html',
     "<div class=\"row\"><h1>Rechercher</h1></div>"
+  );
+
+
+  $templateCache.put('/wwwroot/app/search/result/index.html',
+    ""
   );
  return {}; }]);}());
