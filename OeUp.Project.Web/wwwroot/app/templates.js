@@ -95,6 +95,6 @@
 
 
   $templateCache.put('/wwwroot/app/search/result/index.html',
-    "<div ui-gmap-google-map id=\"map-regie\" center=\"vm.map.center\" zoom=\"vm.map.zoom\" style=\"height:400px\"></div>{{vm.map}}"
+    "<div class=\"row\"><div class=\"col-xs-6 col-md-4\"><div><img src=\"http://www.lettre-gratuite.fr/files/2013/03/place-parking.jpg\" with=\"120px\" height=\"120px\"> <span>lorem ipsum</span> <span>10 €</span></div><div><img src=\"http://img0.gtsstatic.com/faits-divers/mal-foutue-cette-place-de-parking_646_w620.jpg\" with=\"120px\" height=\"120px\"> <span>lorem ipsum</span> <span>10 €</span></div></div><div class=\"col-xs-12 col-md-8\"><div ui-gmap-google-map id=\"map-regie\" center=\"vm.map.center\" zoom=\"vm.map.zoom\" width=\"400px\"><ui-gmap-markers models=\"vm.map.pointList\" coords=\"'position'\" idkey=\"'id'\" click=\"click\"></ui-gmap-markers></div></div></div>"
   );
  return {}; }]);}());
