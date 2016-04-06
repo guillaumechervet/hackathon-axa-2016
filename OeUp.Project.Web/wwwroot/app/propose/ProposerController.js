@@ -1,10 +1,10 @@
 var oeup;
 (function (oeup) {
     'use strict';
-    var ProposeController = (function () {
-        function ProposeController($scope, $location, $log) {
+    var AddBienController = (function () {
+        function AddBienController($scope, $location, $log) {
             var vm = this;
-            $log.info("ProposeController called");
+            $log.info("AddBienController called");
             vm.Biens = [];
             vm.Biens.push({
                 Titre: 'Parking',
@@ -19,12 +19,12 @@ var oeup;
                 $location.path('/proposer/ajouter');
             };
         }
-        return ProposeController;
+        return AddBienController;
     }());
-    oeup.ProposeController = ProposeController;
+    oeup.AddBienController = AddBienController;
     var app = angular.module('myapp');
-    ProposeController.$inject = ["$scope", "$location", "$log"];
-    app.controller('ProposeController', ProposeController);
+    AddBienController.$inject = ["$scope", "$location", "$log"];
+    app.controller('AddBienController', AddBienController);
 })(oeup || (oeup = {}));
 ;
-//# sourceMappingURL=ProposeController.js.map
+//# sourceMappingURL=ProposerController.js.map

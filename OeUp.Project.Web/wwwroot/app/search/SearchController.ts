@@ -9,11 +9,29 @@ module oeup {
 
     export class SearchController {
         public Types : Array<string>;
+        public Model : any;
+        public submit: Function;
 
         constructor($scope: any, $location: ng.ILocationService, $log: ng.ILogService) {
             var vm = this;
             $log.info("SearchController called");
-            vm.Types = ["Parking à la journée", "Wifi", "CoHomeWorking", "Machine à laver"];
+            vm.Types = ["Parking à la journée", 
+            "Wifi", 
+            "CoHomeWorking", 
+            "Machine à laver",
+            "Seche linge",
+            "Perceuse",
+            "Scie",
+            "Tournevis",
+            "Co-voiturage",
+            "Voiture"
+            ];
+            
+             vm.Model = {Price:0};
+             
+             vm.submit = function(){
+                  $location.path('/resultat');
+             };
         }
     }
 

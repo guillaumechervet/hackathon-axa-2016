@@ -4,17 +4,17 @@
 module oeup {
     'use strict';
 
-    export interface IProposeController extends ng.IScope {
-        Vm: ProposeController;
+    export interface IAddBienController extends ng.IScope {
+        Vm: AddBienController;
     }
 
-    export class ProposeController {
+    export class AddBienController {
          public Biens : Array<IBien>;
          public navAdd : Function;
           
         constructor($scope: any, $location: ng.ILocationService, $log: ng.ILogService) {
             var vm = this;
-            $log.info("ProposeController called");
+            $log.info("AddBienController called");
             vm.Biens = [];
             vm.Biens.push({
                 Titre: 'Parking',
@@ -35,7 +35,7 @@ module oeup {
 
     var app = angular.module('myapp');
     
-    ProposeController.$inject = ["$scope", "$location", "$log"];
+    AddBienController.$inject = ["$scope", "$location", "$log"];
 
-    app.controller('ProposeController',ProposeController);
+    app.controller('AddBienController',AddBienController);
 };
