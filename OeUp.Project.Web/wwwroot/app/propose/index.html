@@ -9,8 +9,9 @@
 
 <h1>Proposer vos biens</h1>
 
-<button type="button" class="btn btn-default pull-right" ng-bind="vm.navAdd()">Ajouter un bien</button>
-
+<div>
+    <button type="button" class="btn btn-default pull-right" ng-click="vm.navAdd()">Ajouter un bien</button>
+</div>
 <div ng-if="vm.Biens.length >0">
 
 <h2>Liste des biens</h2>
@@ -42,5 +43,12 @@
 <div ng-if="vm.Biens.length <=0" class="oeup-empty">
     <p>Aucun bien déclaré.</p>
 </div>
+
+<div>
+    <button type="button" class="btn btn-default pull-right" ng-click="vm.navAdd()">Ajouter un bien</button>
+</div>
+</div>
+
+
 
 <div ng-include="'breadcrumbProposer.html'"></div>

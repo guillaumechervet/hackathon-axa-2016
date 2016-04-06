@@ -10,6 +10,7 @@ module oeup {
 
     export class ProposeController {
          public Biens : Array<IBien>;
+         public navAdd : Function;
           
         constructor($scope: any, $location: ng.ILocationService, $log: ng.ILogService) {
             var vm = this;
@@ -48,6 +49,11 @@ module oeup {
                 MainPhoto : 'http://localhost:5000/images/Jellyfish.jpg',
                 Description: 'Ce parking est à louer pendant mes horaires de travail' 
             });
+            
+            
+            vm.navAdd = function(){
+                $location.path('/proposer/ajouter');
+            }
         }
     }
 

@@ -1,7 +1,7 @@
 <script type="text/ng-template" id="breadcrumbAddBien.html">
     <ol class="breadcrumb">
     <li><a href="/">Accueil</a></li>
-    <li class="active">Proposer</li>
+    <li class="/proposer">Proposer</li>
     <li class="active">Ajout bien</li>
     </ol>
 </script>
@@ -16,12 +16,21 @@
 <form name="form" role="form" class="form-horizontal" enctype="multipart/form-data" novalidate mw-submit="vm.submit(form)">
                     <h2>Formulaire</h2>
              <div class="form-group" mw-container="form.uType">
-                        <label for="uType" class="col-sm-3 control-label">Similarité*:</label>
+                        <label for="uType" class="col-sm-3 control-label">Quoi*:</label>
                         <div class="col-sm-4">
                             <select id="uType" name="uType" class="form-control" ng-model="vm.Model.Type" ng-options="c as c for c in vm.Types" mw-validate="vm.Rules.Types">
                                 <option value="">- Sélectionner -</option>
                             </select>
                             <span mw-error="form.uType"></span>
+                        </div>
+                         </div>
+                         
+                         <div class="form-group" mw-container="form.uTitle">
+                            <label class="col-sm-3 control-label">Ou* : </label>
+                            <div class="col-sm-4">
+                                <input type="text" name="uTitle" ng-model="vm.Model.Title" class="form-control" mw-validate="vm.Rules.Title" />
+                                <span mw-error="form.uTitle"></span>
+                            </div>
                         </div>
                         <div class="form-group" mw-container="form.uTitle">
                             <label class="col-sm-3 control-label">Titre* : </label>

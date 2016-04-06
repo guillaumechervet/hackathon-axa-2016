@@ -5,7 +5,21 @@ var oeup;
         function SearchController($scope, $location, $log) {
             var vm = this;
             $log.info("SearchController called");
-            vm.Types = ["Parking à la journée", "Wifi", "CoHomeWorking", "Machine à laver"];
+            vm.Types = ["Parking à la journée",
+                "Wifi",
+                "CoHomeWorking",
+                "Machine à laver",
+                "Seche linge",
+                "Perceuse",
+                "Scie",
+                "Tournevis",
+                "Co-voiturage",
+                "Voiture"
+            ];
+            vm.Model = { Price: 0 };
+            vm.submit = function () {
+                $location.path('/resultat');
+            };
         }
         return SearchController;
     }());
