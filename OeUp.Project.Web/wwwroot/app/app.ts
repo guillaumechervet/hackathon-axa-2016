@@ -23,24 +23,24 @@ module oeup {
 			    controller: 'HomeController',
                 controllerAs: 'vm'
 		    })
-		    .when('/projets', {
-			    templateUrl: '/app/project/projects.html',
-			    controller: 'ProjectsController',
-                controllerAs: 'vm',
-			    resolve: {
+		    .when('/rechercher', {
+			    templateUrl: '/app/search/index.html',
+			    controller: 'SearchController',
+                controllerAs: 'vm'//,
+			    /*resolve: {
 				  initProjets: [
 						    "ProjectService", (ProjectService) => {
 							    return ProjectService.getProjects();
 						    }
 					    ]
-			    }
+			    }*/
 		    })
       
-            .when('/configuration/synonymes-constructeurs', {
-			    templateUrl: '/app/configuration/manufacturerSynonyme/index.html',
-			    controller: 'ManufacturerSynonymeController',
+            .when('/proposer', {
+			    templateUrl: '/app/propose/index.html',
+			    controller: 'ProposeController',
                 controllerAs: 'vm',
-			     resolve: {
+			   /*  resolve: {
 				 initSynonymes: [
 						    "ManufacturerSynonymeService", (ManufacturerSynonymeService) => {
 							    return ManufacturerSynonymeService.getSynonymes();
@@ -51,7 +51,7 @@ module oeup {
 							    return ManufacturerTranscoService.getManufacturersReference();
 						    }
 					    ]
-			    }
+			    }*/
 		    })
             .otherwise({
                       redirectTo: '/'
@@ -59,28 +59,5 @@ module oeup {
 	    }
     ]);
     
-app.controller('MyCtrl', ['$scope', 'Upload', '$timeout', function ($scope, Upload, $timeout) {
-    $scope.uploadFiles = function(files, errFiles) {
-        $scope.files = files;
-        $scope.errFiles = errFiles;
-        angular.forEach(files, function(file) {
-            file.upload = Upload.upload({
-                url: '/api/file/upload',//'https://angular-file-upload-cors-srv.appspot.com/upload',
-                data: {file: file}
-            });
-
-            file.upload.then(function (response) {
-                $timeout(function () {
-                    file.result = response.data;
-                });
-            }, function (response) {
-                if (response.status > 0)
-                    $scope.errorMsg = response.status + ': ' + response.data;
-            }, function (evt) {
-                file.progress = Math.min(100, parseInt((100.0 * evt.loaded / evt.total).toString()));
-            });
-        });
-    }
-}]);
 
 };

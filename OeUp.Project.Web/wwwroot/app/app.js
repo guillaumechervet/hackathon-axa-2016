@@ -18,62 +18,21 @@ var oeup;
                 controller: 'HomeController',
                 controllerAs: 'vm'
             })
-                .when('/projets', {
-                templateUrl: '/app/project/projects.html',
-                controller: 'ProjectsController',
-                controllerAs: 'vm',
-                resolve: {
-                    initProjets: [
-                        "ProjectService", function (ProjectService) {
-                            return ProjectService.getProjects();
-                        }
-                    ]
-                }
+                .when('/rechercher', {
+                templateUrl: '/app/search/index.html',
+                controller: 'SearchController',
+                controllerAs: 'vm'
             })
-                .when('/configuration/synonymes-constructeurs', {
-                templateUrl: '/app/configuration/manufacturerSynonyme/index.html',
-                controller: 'ManufacturerSynonymeController',
+                .when('/proposer', {
+                templateUrl: '/app/propose/index.html',
+                controller: 'ProposeController',
                 controllerAs: 'vm',
-                resolve: {
-                    initSynonymes: [
-                        "ManufacturerSynonymeService", function (ManufacturerSynonymeService) {
-                            return ManufacturerSynonymeService.getSynonymes();
-                        }
-                    ],
-                    initManufacturersReference: [
-                        "ManufacturerTranscoService", function (ManufacturerTranscoService) {
-                            return ManufacturerTranscoService.getManufacturersReference();
-                        }
-                    ]
-                }
             })
                 .otherwise({
                 redirectTo: '/'
             });
         }
     ]);
-    app.controller('MyCtrl', ['$scope', 'Upload', '$timeout', function ($scope, Upload, $timeout) {
-            $scope.uploadFiles = function (files, errFiles) {
-                $scope.files = files;
-                $scope.errFiles = errFiles;
-                angular.forEach(files, function (file) {
-                    file.upload = Upload.upload({
-                        url: '/api/file/upload',
-                        data: { file: file }
-                    });
-                    file.upload.then(function (response) {
-                        $timeout(function () {
-                            file.result = response.data;
-                        });
-                    }, function (response) {
-                        if (response.status > 0)
-                            $scope.errorMsg = response.status + ': ' + response.data;
-                    }, function (evt) {
-                        file.progress = Math.min(100, parseInt((100.0 * evt.loaded / evt.total).toString()));
-                    });
-                });
-            };
-        }]);
 })(oeup || (oeup = {}));
 ;
 //# sourceMappingURL=app.js.map
