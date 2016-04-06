@@ -16,13 +16,37 @@ module oeup {
             $log.info("ProposeController called");
             vm.Biens = [];
             vm.Biens.push({
-                Titre: 'Parking',
-                Photos: [],
+                Photos: ["http://localhost:5000/images/Hydrangeas.jpg","http://localhost:5000/images/Hydrangeas.jpg"],
+                Titre: 'Place de Parking',
                 EstLoue: true,
-                DateDebut: new Date(2016, 1, 1, 9, 30),
-                DateFin: new Date(2016, 1, 1, 18, 30),
                 Tarif: 4,
-                Frequence: 'chaque jour'
+                DateDebut: new Date(2016,1,1,9,30),
+                DateFin : new Date(2016,1,1,18,30),
+                Frequence : 'Chaque jour',
+                MainPhoto : 'http://localhost:5000/images/Desert.jpg',
+                Description: 'Ce parking est à louer pendant mes horaires de travail' 
+            });
+            vm.Biens.push({
+                Photos: ["",""],
+                Titre: 'Connexion wifi',
+                EstLoue: true,
+                Tarif: 5,
+                DateDebut: new Date(2016,1,1,9,30),
+                DateFin : new Date(2016,1,1,18,30),
+                Frequence : 'Chaque jour',
+                MainPhoto : 'http://localhost:5000/images/Hydrangeas.jpg',
+                Description: 'Ce parking est à louer pendant mes horaires de travail' 
+            });
+            vm.Biens.push({
+                Photos: ["",""],
+                Titre: 'Parking',
+                EstLoue: true,
+                Tarif: 3,
+                DateDebut: new Date(2016,1,1,9,30),
+                DateFin : new Date(2016,1,1,18,30),
+                Frequence : 'Chaque jour',
+                MainPhoto : 'http://localhost:5000/images/Jellyfish.jpg',
+                Description: 'Ce parking est à louer pendant mes horaires de travail' 
             });
         }
     }

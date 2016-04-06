@@ -7,5 +7,7 @@
         DateDebut: Date;
         DateFin : Date;
         Frequence : string;
+        MainPhoto : string;
+        Description : string;
     }
 }
