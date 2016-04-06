@@ -13,7 +13,9 @@
     <link href="/app/socle/loader.css" rel="stylesheet" />
      <base href="/">
      <link rel="canonical" href="/" />
-     
+     <style>
+         .angular-google-map-container { height: 400px; }
+         </style>
 
 </head>
 <body>
@@ -46,6 +48,7 @@
 <script type="text/ng-template" id="input-xlsx.html">
 
 <style>
+    
         .drop{
             border:2px dashed #bbb;
             -moz-border-radius:5px;
@@ -150,6 +153,7 @@
 <script type="text/javascript" src="app/configuration/ConfigurationService.js"></script>
 
 <script type="text/javascript" src="app/search/SearchController.js"></script>
+<script type="text/javascript" src="app/search/result/ResultController.js"></script>
 <script type="text/javascript" src="app/propose/ProposeController.js"></script>
 
 </environment>

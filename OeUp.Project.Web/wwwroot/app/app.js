@@ -16,7 +16,7 @@ var oeup;
             $locationProvider.html5Mode(true).hashPrefix('!');
             uiGmapGoogleMapApiProvider.configure({
                 key: 'AIzaSyA_JkeKrjvKkqqCcXYhQXRIEoUFIgs6iRY',
-                v: '3.20',
+                v: '3',
                 libraries: 'weather,geometry,visualization'
             });
             $routeProvider.when('/', {
