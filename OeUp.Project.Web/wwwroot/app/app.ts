@@ -53,7 +53,18 @@ module oeup {
 					    ]
 			    }*/
 		    })
-      
+      .when('/valider', {
+			    templateUrl: '/app/search/validate/index.html',
+			    controller: 'ValidateController',
+                controllerAs: 'vm'//,
+			    /*resolve: {s
+				  initProjets: [
+						    "ProjectService", (ProjectService) => {
+							    return ProjectService.getProjects();
+						    }
+					    ]
+			    }*/
+		    })
             .when('/proposer', {
 			    templateUrl: '/app/propose/index.html',
 			    controller: 'ProposeController',

@@ -16,7 +16,7 @@ module oeup {
             var vm = this;
             $log.info("AddBienController called");
             vm.Biens = [];
-            vm.Biens.push({
+          /*  vm.Biens.push({
                 Titre: 'Parking',
                 Photos: [],
                 EstLoue: true,
@@ -24,7 +24,7 @@ module oeup {
                 DateFin: new Date(2016, 1, 1, 18, 30),
                 Tarif: 4,
                 Frequence: 'chaque jour'
-            });
+            });*/
             
             
             vm.navAdd = function(){
