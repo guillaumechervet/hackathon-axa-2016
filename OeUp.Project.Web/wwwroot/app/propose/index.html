@@ -9,11 +9,12 @@
 
 <h1>Proposer vos biens</h1>
 
+<button type="button" class="btn btn-default pull-right" ng-bind="vm.navAdd()">Ajouter un bien</button>
 
 <div ng-if="vm.Biens.length >0">
 
 <h2>Liste des biens</h2>
-<table class="table">
+<table class="table" ng-repeat="bien in vm.Biens">
     <thead>
         <tr>
             <th>Titre</th>
@@ -21,12 +22,17 @@
             <th>Action</th>
         </tr>
     </thead>
-    <tbody>
-        <tr class="height-20" ng-repeat="bien in vm.Biens">
+    <tbody >
+        <tr >
+            <td >
+                <span>Loué du {{bien.DateDebut | date:'dd/MM/yyyy' }} au {{bien.DateFin | date:'dd/MM/yyyy' }} : {{bien.Frequence}} de {{bien.DateDebut | date:'HH:mm' }} au {{bien.DateFin | date:'HH:mm' }}</span>
+            </td>
+        </tr>
+        <tr class="height-20" >
             <td>
                 <span ng-bind="bien.Titre" ></span>
             </td>
-            <td>
+            <td>                
                    <span >{{bien.DateDebut | date:'dd/MM/yyyy' }}</span>
                    <span >{{bien.DateFin | date:'dd/MM/yyyy' }}</span>
             <td>
@@ -36,7 +42,7 @@
         
     </tbody>
 </table>
-
+<button type="button" class="btn btn-default pull-right" ng-bind="vm.navAdd()">Ajouter un bien</button>
 
 </div>
 

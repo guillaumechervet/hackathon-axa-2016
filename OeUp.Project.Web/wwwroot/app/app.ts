@@ -71,6 +71,11 @@ module oeup {
 					    ]
 			    }*/
 		    })
+            .when('/proposer/ajouter', {
+			    templateUrl: '/app/propose/addBien.html',
+			    controller: 'AddBienController',
+                controllerAs: 'vm'
+		    })
             .otherwise({
                       redirectTo: '/'
                   });

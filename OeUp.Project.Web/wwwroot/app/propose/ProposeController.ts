@@ -1,4 +1,5 @@
-﻿/// <reference path="../../../bower_components/DefinitelyTyped/angularjs/angular.d.ts"/>
+/// <reference path="../../../bower_components/DefinitelyTyped/angularjs/angular.d.ts"/>
+/// <reference path="IBien.ts"/>
 
 module oeup {
     'use strict';
@@ -8,10 +9,21 @@ module oeup {
     }
 
     export class ProposeController {
-
+         public Biens : Array<IBien>;
+          
         constructor($scope: any, $location: ng.ILocationService, $log: ng.ILogService) {
             var vm = this;
-            $log.info("SearchController called");
+            $log.info("ProposeController called");
+            vm.Biens = [];
+            vm.Biens.push({
+                Titre: 'Parking',
+                Photos: [],
+                EstLoue: true,
+                DateDebut: new Date(2016, 1, 1, 9, 30),
+                DateFin: new Date(2016, 1, 1, 18, 30),
+                Tarif: 4,
+                Frequence: 'chaque jour'
+            });
         }
     }
 

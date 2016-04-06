@@ -1,0 +1,70 @@
+<script type="text/ng-template" id="breadcrumbAddBien.html">
+    <ol class="breadcrumb">
+    <li><a href="/">Accueil</a></li>
+    <li class="active">Proposer</li>
+    <li class="active">Ajout bien</li>
+    </ol>
+</script>
+
+<div ng-include="'breadcrumbAddBien.html'"></div>   
+
+<div style="row">
+
+<h1>Ajout bien</h1>
+
+<div>
+<form name="form" role="form" class="form-horizontal" enctype="multipart/form-data" novalidate mw-submit="vm.submit(form)">
+                    <h2>Formulaire</h2>
+             <div class="form-group" mw-container="form.uType">
+                        <label for="uType" class="col-sm-3 control-label">Similarité*:</label>
+                        <div class="col-sm-4">
+                            <select id="uType" name="uType" class="form-control" ng-model="vm.Model.Type" ng-options="c as c for c in vm.Types" mw-validate="vm.Rules.Types">
+                                <option value="">- Sélectionner -</option>
+                            </select>
+                            <span mw-error="form.uType"></span>
+                        </div>
+                        <div class="form-group" mw-container="form.uTitle">
+                            <label class="col-sm-3 control-label">Titre* : </label>
+                            <div class="col-sm-4">
+                                <input type="text" name="uTitle" ng-model="vm.Model.Title" class="form-control" mw-validate="vm.Rules.Title" />
+                                <span mw-error="form.uTitle"></span>
+                            </div>
+                        </div>
+                        <div class="form-group" mw-container="form.uDateDebut">
+                            <label class="col-sm-3 control-label">Date début* : </label>
+                            <div class="col-sm-4">
+                                <input type="text" name="uDateDebut" ng-model="vm.Model.DateDebut" class="form-control" uib-datepicker-popup="dd/MM/yyyy" mw-validate="vm.Rules.DateDebut" />
+                                <span mw-error="form.uDateDebut"></span>
+                            </div>
+                        </div>
+                        <div class="form-group" mw-container="form.uDateFin">
+                            <label class="col-sm-3 control-label">Date fin* : </label>
+                            <div class="col-sm-4">
+                                <input type="text" name="uDateFin" ng-model="vm.Model.DateFin" class="form-control" uib-datepicker-popup="dd/MM/yyyy" mw-validate="vm.Rules.DateFin" />
+                                <span mw-error="form.uDateFin"></span>
+                            </div>
+                        </div>
+                        <div class="form-group" mw-container="form.uComment">
+                            <label class="col-sm-3 control-label">Description : </label>
+                            <div class="col-sm-4">
+                                 <textarea ng-model="vm.Model.Comment" class="form-control" id="uComment" name="uComment" rows="4" cols="30" mw-validate="vm.Rules.Comment"></textarea>
+                                <span mw-error="form.uComment"></span>
+                            </div>
+                        </div>
+     
+                    </div>
+
+                    <div class="form-group">
+                            <div class="col-sm-3"> </div>
+                            <div class="col-sm-4">
+                                <button type="submit" class="btn btn-success">Ajouter</button>
+                            </div>
+                        </div>
+
+</form>
+
+</div>
+
+<div ng-include="'breadcrumbAddBien.html'"></div>
+
+   </div>

@@ -8,10 +8,12 @@ module oeup {
     }
 
     export class SearchController {
+        public Types : Array<string>;
 
         constructor($scope: any, $location: ng.ILocationService, $log: ng.ILogService) {
             var vm = this;
             $log.info("SearchController called");
+            vm.Types = ["Parking à la journée", "Wifi", "CoHomeWorking", "Machine à laver"];
         }
     }
 

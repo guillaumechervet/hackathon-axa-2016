@@ -5,6 +5,7 @@ var oeup;
         function SearchController($scope, $location, $log) {
             var vm = this;
             $log.info("SearchController called");
+            vm.Types = ["Parking à la journée", "Wifi", "CoHomeWorking", "Machine à laver"];
         }
         return SearchController;
     }());
