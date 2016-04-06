@@ -95,6 +95,6 @@
 
 
   $templateCache.put('/wwwroot/app/search/result/index.html',
-    "<ui-gmap-google-map center=\"ctrl.map.center\" zoom=\"ctrl.map.zoom\" id=\"map-regie\" bounds=\"ctrl.map.bounds\" events=\"ctrl.map.events\" options=\"ctrl.map.options\">"
+    "<div ui-gmap-google-map id=\"map-regie\" center=\"vm.map.center\" zoom=\"vm.map.zoom\" style=\"height:400px\"></div>{{vm.map}}"
   );
  return {}; }]);}());
