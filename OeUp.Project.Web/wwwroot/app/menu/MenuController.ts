@@ -23,7 +23,7 @@ module oeup {
                      }
              	return false;
              };
-
+             
            vm.isActive = function (routePath) {
                  var location = $location.path();
 

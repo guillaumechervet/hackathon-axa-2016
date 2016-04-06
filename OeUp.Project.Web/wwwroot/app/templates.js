@@ -12,7 +12,7 @@
 
 
   $templateCache.put('/wwwroot/app/home/index.html',
-    "<div class=\"row\"><h1>Accueil</h1><div class=\"col-md-4\"><div class=\"panel panel-default\"><div class=\"panel-heading\">Projets</div><div class=\"panel-body\"><a href=\"/projets\">Images</a></div><div class=\"panel-footer\"></div></div></div><div class=\"col-md-4\"><div class=\"panel panel-default\"><div class=\"panel-heading\">Synonymes constructeurs</div><div class=\"panel-body\"><a href=\"/configuration/synonymes-constructeurs\">Images</a></div><div class=\"panel-footer\"></div></div></div></div>"
+    "<div class=\"row\"><h1>Accueil</h1><div class=\"col-md-4\"><div class=\"panel panel-default\"><div class=\"panel-heading\">Rechercher</div><div class=\"panel-body\"><a href=\"/rechercher\">Images</a></div><div class=\"panel-footer\"></div></div></div><div class=\"col-md-4\"><div class=\"panel panel-default\"><div class=\"panel-heading\">Proposer</div><div class=\"panel-body\"><a href=\"/proposer\">Images</a></div><div class=\"panel-footer\"></div></div></div></div>"
   );
 
 
@@ -23,23 +23,7 @@
     "\n" +
     "       \r" +
     "\n" +
-    "        <li><a href=\"#\">Projets</a></li> --><li ng-class=\"menu.isActive('/configuration/equipementier') ? 'active' : ''\"><a href=\"/configuration/equipementier\">Equipementiers</a></li><li ng-class=\"menu.isActive('/configuration/RefOE') ? 'active' : ''\"><a href=\"/configuration/RefOE\">RefOFe importantes</a></li><li ng-class=\"menu.isActive('/configuration/configuration/similarite') ? 'active' : ''\"><a href=\"/configuration/similarite\">Paramètres similarités</a></li><!--  <li class=\"dropdown\">\r" +
-    "\n" +
-    "          <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Gestion des entrants<span class=\"caret\"></span></a>\r" +
-    "\n" +
-    "          <ul class=\"dropdown-menu\">\r" +
-    "\n" +
-    "            <li><a href=\"/configuration/equipementier\">Equipementiers</a></li>\r" +
-    "\n" +
-    "            <li><a href=\"/configuration/RefOE\">RefOFe importantes</a></li>\r" +
-    "\n" +
-    "              <li role=\"separator\" class=\"divider\"></li>       \r" +
-    "\n" +
-    "             <li><a href=\"/configuration/synonymes-constructeurs\">Synonymes constructeurs</a></li>\r" +
-    "\n" +
-    "          </ul>\r" +
-    "\n" +
-    "        </li>--></ul><!--\r" +
+    "        <li><a href=\"#\">Projets</a></li> --><li ng-class=\"menu.isActive('/rechercher') ? 'active' : ''\"><a href=\"/rechercher\">Exemple menu</a></li></ul><!--\r" +
     "\n" +
     "      <ul class=\"nav navbar-nav navbar-right\">\r" +
     "\n" +
@@ -72,6 +56,17 @@
     "  </div>\r" +
     "\n" +
     "  --><!-- /.container-fluid --></div></div></nav>"
+  );
+
+
+  $templateCache.put('/wwwroot/app/propose/index.html',
+    "<script type=\"text/ng-template\" id=\"breadcrumbProposer.html\"><ol class=\"breadcrumb\">\r" +
+    "\n" +
+    "    <li><a href=\"/\">Accueil</a></li>\r" +
+    "\n" +
+    "    <li class=\"active\">Proposer</li>\r" +
+    "\n" +
+    "    </ol></script><div ng-include=\"'breadcrumbProposer.html'\"></div><h1>Proposer vos biens</h1><div ng-if=\"vm.Biens.length >0\"><h2>Liste des biens</h2><table class=\"table\"><thead><tr><th>Titre</th><th>Date</th><th>Action</th></tr></thead><tbody><tr class=\"height-20\" ng-repeat=\"bien in vm.Biens\"><td><span ng-bind=\"bien.Titre\"></span></td><td><span>{{bien.DateDebut | date:'dd/MM/yyyy' }}</span> <span>{{bien.DateFin | date:'dd/MM/yyyy' }}</span></td><td><button ng-click=\"vm.remove(bien)\" type=\"button\" class=\"btn btn-danger\" uib-popover=\"Supprimer\" popover-trigger=\"mouseenter\"><span class=\"glyphicon glyphicon-remove\"></button></td></tr></tbody></table></div><div ng-if=\"vm.Biens.length <=0\" class=\"oeup-empty\"><p>Aucun bien déclaré.</p></div><div ng-include=\"'breadcrumbProposer.html'\"></div>"
   );
 
 
