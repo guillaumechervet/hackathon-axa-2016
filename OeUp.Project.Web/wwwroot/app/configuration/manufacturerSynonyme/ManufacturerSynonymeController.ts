@@ -1,8 +1,6 @@
 ﻿/// <reference path="../../../../bower_components/DefinitelyTyped/angularjs/angular.d.ts"/>
 /// <reference path="IManufacturerSynonyme.ts"/>
 /// <reference path="ManufacturerSynonymeService.ts"/>
-/// <reference path="../manufacturerTransco/ManufacturerTranscoService.ts"/>
-/// <reference path="../manufacturerTransco/IManufacturerReference.ts"/>
 /// <reference path="../../../../bower_components/DefinitelyTyped/toastr/toastr.d.ts"/>
 
 module oeup {
@@ -16,7 +14,7 @@ module oeup {
 
         public Model: IManufacturerSynonyme;
         public Synonymes: Array<IManufacturerSynonyme>;
-        public ManufacturersReference : Array<IManufacturerReference>;
+       // public ManufacturersReference : Array<IManufacturerReference>;
         public submit: Function;
         public remove: Function;
         public getSourceRules: Function;
@@ -111,7 +109,7 @@ module oeup {
             return rules.Dest;   
            }
            
-           var _findSupplierReference = function name(label:string) :IManufacturerReference {
+           var _findSupplierReference = function name(label:string) :any {
                if(label){
                    var references = ManufacturerTranscoService.ManufacturersReference;
                 for (var index = 0; index < references.length; index++) {
@@ -128,7 +126,7 @@ module oeup {
             $log.info("OverviewController called");
             vm.Model ={ Source: "", Dest: "" , HerNrDest : null, HerNrSource: null };
             vm.Synonymes= [];
-            vm.ManufacturersReference = ManufacturerTranscoService.ManufacturersReference;
+         //   vm.ManufacturersReference = ManufacturerTranscoService.ManufacturersReference;
             angular.copy(ManufacturerSynonymeService.Synonymes, vm.Synonymes);
             vm.add = function(form:any){
                 if(form.$valid) {

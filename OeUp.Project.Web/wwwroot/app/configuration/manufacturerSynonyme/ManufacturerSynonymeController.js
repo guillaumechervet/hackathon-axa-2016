@@ -83,7 +83,6 @@ var oeup;
             $log.info("OverviewController called");
             vm.Model = { Source: "", Dest: "", HerNrDest: null, HerNrSource: null };
             vm.Synonymes = [];
-            vm.ManufacturersReference = ManufacturerTranscoService.ManufacturersReference;
             angular.copy(ManufacturerSynonymeService.Synonymes, vm.Synonymes);
             vm.add = function (form) {
                 if (form.$valid) {

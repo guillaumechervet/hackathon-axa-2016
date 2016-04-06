@@ -8,10 +8,6 @@ using Microsoft.Data.Entity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using OeUp.Project.Data;
-using OeUp.Project.Data.Command.Configuration;
-using OeUp.Project.Data.Command.Project;
-using OeUp.Project.Data.Models;
 
 namespace AspNet5TypescriptProductionGrunt
 {
