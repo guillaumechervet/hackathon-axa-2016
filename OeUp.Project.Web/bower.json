@@ -38,5 +38,8 @@
     "angular-bootstrap": {
       "": "*.*"
     }
+  },
+  "resolutions": {
+    "angular": "1.5.3"
   }
 }
