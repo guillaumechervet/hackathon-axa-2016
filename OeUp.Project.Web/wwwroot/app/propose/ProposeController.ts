@@ -1,8 +1,17 @@
-var oeup;
-(function (oeup) {
+/// <reference path="../../../bower_components/DefinitelyTyped/angularjs/angular.d.ts"/>
+/// <reference path="IBien.ts"/>
+
+module oeup {
     'use strict';
-    var ProposeController = (function () {
-        function ProposeController($scope, $location, $log) {
+
+    export interface IProposeController extends ng.IScope {
+        Vm: ProposeController;
+    }
+
+    export class ProposeController {
+         public Biens : Array<IBien>;
+          
+        constructor($scope: any, $location: ng.ILocationService, $log: ng.ILogService) {
             var vm = this;
             $log.info("ProposeController called");
             vm.Biens = [];
@@ -16,12 +25,11 @@ var oeup;
                 Frequence: 'chaque jour'
             });
         }
-        return ProposeController;
-    }());
-    oeup.ProposeController = ProposeController;
+    }
+
     var app = angular.module('myapp');
+    
     ProposeController.$inject = ["$scope", "$location", "$log"];
-    app.controller('ProposeController', ProposeController);
-})(oeup || (oeup = {}));
-;
-//# sourceMappingURL=ProposeController.js.map
+
+    app.controller('ProposeController',ProposeController);
+};
