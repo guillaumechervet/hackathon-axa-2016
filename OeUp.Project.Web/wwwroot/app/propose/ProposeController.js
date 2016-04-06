@@ -5,6 +5,16 @@ var oeup;
         function ProposeController($scope, $location, $log) {
             var vm = this;
             $log.info("SearchController called");
+            vm.Biens = [];
+            vm.Biens.push({
+                Titre: 'Parking',
+                Photos: [],
+                EstLoue: true,
+                DateDebut: new Date(2016, 1, 1, 9, 30),
+                DateFin: new Date(2016, 1, 1, 18, 30),
+                Tarif: 4,
+                Frequence: 'chaque jour'
+            });
         }
         return ProposeController;
     }());
