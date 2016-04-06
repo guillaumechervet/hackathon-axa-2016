@@ -73,4 +73,9 @@
   $templateCache.put('/wwwroot/app/search/index.html',
     "<div class=\"row\"><h1>Rechercher</h1></div>"
   );
+
+
+  $templateCache.put('/wwwroot/app/search/result/index.html',
+    ""
+  );
  return {}; }]);}());

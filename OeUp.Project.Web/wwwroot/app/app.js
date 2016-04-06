@@ -6,13 +6,19 @@ var oeup;
         'ngRoute',
         'ui.bootstrap',
         'ngFileUpload',
-        'mw.validation'
+        'mw.validation',
+        'uiGmapgoogle-maps'
     ]);
-    app.config(["$routeProvider", "$locationProvider", '$httpProvider', function ($routeProvider, $locationProvider, $httpProvider) {
+    app.config(["$routeProvider", "$locationProvider", '$httpProvider', 'uiGmapGoogleMapApiProvider', function ($routeProvider, $locationProvider, $httpProvider, uiGmapGoogleMapApiProvider) {
             $httpProvider.interceptors.push('HttpLoaderInterceptor');
             $httpProvider.interceptors.push('HttpDateInterceptor');
             $httpProvider.interceptors.push('HttpExceptionInterceptor');
             $locationProvider.html5Mode(true).hashPrefix('!');
+            uiGmapGoogleMapApiProvider.configure({
+                key: 'AIzaSyA_JkeKrjvKkqqCcXYhQXRIEoUFIgs6iRY',
+                v: '3.20',
+                libraries: 'weather,geometry,visualization'
+            });
             $routeProvider.when('/', {
                 templateUrl: '/app/home/index.html',
                 controller: 'HomeController',
@@ -21,6 +27,11 @@ var oeup;
                 .when('/rechercher', {
                 templateUrl: '/app/search/index.html',
                 controller: 'SearchController',
+                controllerAs: 'vm'
+            })
+                .when('/resultat', {
+                templateUrl: '/app/search/result/index.html',
+                controller: 'ResultController',
                 controllerAs: 'vm'
             })
                 .when('/proposer', {
