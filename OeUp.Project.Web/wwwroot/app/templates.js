@@ -84,6 +84,14 @@
 
 
   $templateCache.put('/wwwroot/app/search/index.html',
-    "<div class=\"row\"><h1>Rechercher</h1></div>"
+    "<script type=\"text/ng-template\" id=\"breadcrumbAddBien.html\"><ol class=\"breadcrumb\">\r" +
+    "\n" +
+    "    <li><a href=\"/\">Accueil</a></li>\r" +
+    "\n" +
+    "    <li class=\"active\">Proposer</li>\r" +
+    "\n" +
+    "    <li class=\"active\">Ajout bien</li>\r" +
+    "\n" +
+    "    </ol></script><div style=\"row\"><div ng-include=\"'breadcrumbAddBien.html'\"></div><h1>Ajout bien</h1><div><form name=\"form\" role=\"form\" class=\"form-horizontal\" enctype=\"multipart/form-data\" novalidate mw-submit=\"vm.submit(form)\"><h2>Formulaire</h2><div class=\"col-sm-4 col-sm-offset-2\"><div class=\"row\"><div class=\"form-group\" mw-container=\"form.uType\"><label for=\"uType\" class=\"col-sm-3 control-label\">Quoi*:</label><div class=\"col-sm-7\"><input type=\"text\" name=\"uType\" ng-model=\"vm.Model.Type\" class=\"form-control\" mw-validate=\"vm.Rules.Type\"> <span mw-error=\"form.uType\"></span></div></div></div></div><div class=\"col-sm-4\"><div class=\"row\"><div class=\"form-group\" mw-container=\"form.uOu\"><label class=\"col-sm-3 control-label\">Ou* :</label><div class=\"col-sm-7\"><input type=\"text\" name=\"uOu\" ng-model=\"vm.Model.Ou\" class=\"form-control\" mw-validate=\"vm.Rules.Ou\"> <span mw-error=\"form.uOu\"></span></div></div></div></div><div class=\"clearfix\"></div><div class=\"form-group\"><div class=\"col-sm-3\"></div><div class=\"col-sm-4\"><button type=\"submit\" class=\"btn btn-success\">Rechercher</button></div></div></form><div ng-include=\"'breadcrumbAddBien.html'\"></div></div></div>"
   );
  return {}; }]);}());
