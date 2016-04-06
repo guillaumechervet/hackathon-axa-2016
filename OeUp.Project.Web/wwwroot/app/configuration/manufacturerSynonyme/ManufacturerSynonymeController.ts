@@ -22,7 +22,7 @@ module oeup {
         public add: Function;
         public Vm: IManufacturerSynonymeController;
 
-        constructor($scope: any, $location: ng.ILocationService, $log: ng.ILogService, ManufacturerSynonymeService: ManufacturerSynonymeService, ManufacturerTranscoService:ManufacturerTranscoService ) {
+        constructor($scope: any, $location: ng.ILocationService, $log: ng.ILogService, ManufacturerSynonymeService: ManufacturerSynonymeService, ManufacturerTranscoService:any ) {
             var vm = this;
             
             
@@ -165,7 +165,7 @@ module oeup {
 
     var app = angular.module('myapp');
     
-    ManufacturerSynonymeController.$inject = ["$scope", "$location", "$log", "ManufacturerSynonymeService", "ManufacturerTranscoService"];
+    ManufacturerSynonymeController.$inject = ["$scope", "$location", "$log", "ManufacturerSynonymeService", "ManufacturerSynonymeService"];
 
     app.controller('ManufacturerSynonymeController',ManufacturerSynonymeController);
 };

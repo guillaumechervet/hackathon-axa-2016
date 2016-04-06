@@ -114,7 +114,7 @@ var oeup;
     }());
     oeup.ManufacturerSynonymeController = ManufacturerSynonymeController;
     var app = angular.module('myapp');
-    ManufacturerSynonymeController.$inject = ["$scope", "$location", "$log", "ManufacturerSynonymeService", "ManufacturerTranscoService"];
+    ManufacturerSynonymeController.$inject = ["$scope", "$location", "$log", "ManufacturerSynonymeService", "ManufacturerSynonymeService"];
     app.controller('ManufacturerSynonymeController', ManufacturerSynonymeController);
 })(oeup || (oeup = {}));
 ;
