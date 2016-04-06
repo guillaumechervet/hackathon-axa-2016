@@ -27,7 +27,7 @@ var oeup;
                 var boueb2 = {
                     id: 2,
                     position: {
-                        longitude: 48.8971468, latitude: 2.1845104
+                        latitude: 48.8971468, longitude: 2.1845104
                     },
                     click: function () {
                         $location.url('/rechercher');

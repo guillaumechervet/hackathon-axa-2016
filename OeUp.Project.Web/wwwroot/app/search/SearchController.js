@@ -17,6 +17,9 @@ var oeup;
                 "Voiture"
             ];
             vm.Model = { Price: 0 };
+            vm.submit = function () {
+                $location.path('/resultat');
+            };
         }
         return SearchController;
     }());
