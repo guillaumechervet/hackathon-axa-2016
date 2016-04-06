@@ -27,7 +27,29 @@ module oeup {
                     _.object = _.zipObject;
                 }
                  maps.visualRefresh = true;
-
+                 
+                  var boueb = {
+                     id:1,
+                     position:{
+                        latitude: 48.8965812, longitude: 2.318375999999944
+                     },
+                     click :  ()=> {
+                            $location.url('/rechercher')
+                          }
+                 };                 
+                    vm.map.pointList.push(boueb);
+                    
+                    
+                     var boueb2 = {
+                     id:2,
+                     position:{
+                        latitude: 48.8971468, longitude: 2.1845104
+                     },
+                     click :  ()=> {
+                            $location.url('/rechercher')
+                          }
+                 };                 
+                    vm.map.pointList.push(boueb2);
                  
             });
             

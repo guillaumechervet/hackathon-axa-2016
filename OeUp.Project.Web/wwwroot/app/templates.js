@@ -79,7 +79,12 @@
     "\n" +
     "    <li class=\"active\">Proposer</li>\r" +
     "\n" +
+<<<<<<< HEAD
     "    </ol></script><div ng-include=\"'breadcrumbProposer.html'\"></div><h1>Proposer vos biens</h1><div style=\"height:40px\"><button type=\"button\" class=\"btn btn-default pull-right\" ng-click=\"vm.navAdd()\">Ajouter un bien</button></div><div ng-if=\"vm.Biens.length >0\"><h2>Liste des biens</h2><table class=\"table\" ng-repeat=\"bien in vm.Biens\"><thead><tr><th>Titre</th><th>Date</th><th>Action</th></tr></thead><tbody><tr><td><span>Loué du {{bien.DateDebut | date:'dd/MM/yyyy' }} au {{bien.DateFin | date:'dd/MM/yyyy' }} : {{bien.Frequence}} de {{bien.DateDebut | date:'HH:mm' }} au {{bien.DateFin | date:'HH:mm' }}</span></td></tr><tr class=\"height-20\"><td><span ng-bind=\"bien.Titre\"></span></td><td><span>{{bien.DateDebut | date:'dd/MM/yyyy' }}</span> <span>{{bien.DateFin | date:'dd/MM/yyyy' }}</span></td><td><button ng-click=\"vm.remove(bien)\" type=\"button\" class=\"btn btn-danger\" uib-popover=\"Supprimer\" popover-trigger=\"mouseenter\"><span class=\"glyphicon glyphicon-remove\"></button></td></tr></tbody></table><div ng-if=\"vm.Biens.length <=0\" class=\"oeup-empty\"><p>Aucun bien déclaré.</p></div><div style=\"height:40px\"><button type=\"button\" class=\"btn btn-default pull-right\" ng-click=\"vm.navAdd()\">Ajouter un bien</button></div></div><div ng-include=\"'breadcrumbProposer.html'\"></div>"
+=======
+    "    </ol></script><div ng-include=\"'breadcrumbProposer.html'\"></div><h1>Proposer vos biens</h1><button type=\"button\" class=\"btn btn-default pull-right\" ng-bind=\"vm.navAdd()\">Ajouter un bien</button><div ng-if=\"vm.Biens.length >0\"><h2>Liste des biens</h2><div class=\"row\"><div class=\"col-sm-6 col-md-4\" ng-repeat=\"bien in vm.Biens\"><div class=\"thumbnail\"><img ng-src=\"{{bien.MainPhoto}}\"><div class=\"caption\"><h3>{{bien.Titre}}</h3><p><span>Loué du {{bien.DateDebut | date:'dd/MM/yyyy' }} au {{bien.DateFin | date:'dd/MM/yyyy' }} : {{bien.Frequence}} de {{bien.DateDebut | date:'HH:mm' }} au {{bien.DateFin | date:'HH:mm' }}</span> {{bien.Description}}</p><p><button ng-click=\"vm.remove(bien)\" type=\"button\" class=\"btn btn-danger\" uib-popover=\"Supprimer\" popover-trigger=\"mouseenter\"><span class=\"glyphicon glyphicon-remove\"></button> <button ng-click=\"vm.edit(bien)\" type=\"button\" class=\"btn btn-edit\" uib-popover=\"Editer\" popover-trigger=\"mouseenter\"><span class=\"glyphicon glyphicon-edit\"></button></p></div></div></div></div><button type=\"button\" class=\"btn btn-default pull-right\" ng-bind=\"vm.navAdd()\">Ajouter un bien</button></div><div ng-if=\"vm.Biens.length <=0\" class=\"oeup-empty\"><p>Aucun bien déclaré.</p></div><div ng-include=\"'breadcrumbProposer.html'\"></div>"
+
+>>>>>>> d2ceb547194af3240b8b3312da5b4cfd99e17434
   );
 
 
@@ -95,6 +100,6 @@
 
 
   $templateCache.put('/wwwroot/app/search/result/index.html',
-    "<div ui-gmap-google-map id=\"map-regie\" center=\"vm.map.center\" zoom=\"vm.map.zoom\" style=\"height:400px\"></div>{{vm.map}}"
+    "<div class=\"row\"><div class=\"col-xs-6 col-md-4\"><div><img src=\"http://www.lettre-gratuite.fr/files/2013/03/place-parking.jpg\" with=\"120px\" height=\"120px\"> <span>lorem ipsum</span> <span>10 €</span></div><div><img src=\"http://img0.gtsstatic.com/faits-divers/mal-foutue-cette-place-de-parking_646_w620.jpg\" with=\"120px\" height=\"120px\"> <span>lorem ipsum</span> <span>10 €</span></div></div><div class=\"col-xs-12 col-md-8\"><div ui-gmap-google-map id=\"map-regie\" center=\"vm.map.center\" zoom=\"vm.map.zoom\" width=\"400px\"><ui-gmap-markers models=\"vm.map.pointList\" coords=\"'position'\" idkey=\"'id'\" click=\"click\"></ui-gmap-markers></div></div></div>"
   );
  return {}; }]);}());

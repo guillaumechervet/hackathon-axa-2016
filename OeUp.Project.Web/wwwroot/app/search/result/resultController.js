@@ -14,6 +14,26 @@ var oeup;
                     _.object = _.zipObject;
                 }
                 maps.visualRefresh = true;
+                var boueb = {
+                    id: 1,
+                    position: {
+                        latitude: 48.8965812, longitude: 2.318375999999944
+                    },
+                    click: function () {
+                        $location.url('/rechercher');
+                    }
+                };
+                vm.map.pointList.push(boueb);
+                var boueb2 = {
+                    id: 2,
+                    position: {
+                        latitude: 48.8971468, longitude: 2.1845104
+                    },
+                    click: function () {
+                        $location.url('/rechercher');
+                    }
+                };
+                vm.map.pointList.push(boueb2);
             });
             vm.map = { center: { latitude: 48.8965812, longitude: 2.318375999999944 }, zoom: 13, pointList: [], options: { streetViewControl: false } };
         }
