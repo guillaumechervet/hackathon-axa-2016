@@ -171,7 +171,7 @@
     "\n" +
     "    <li class=\"active\">Ma recherche</li>\r" +
     "\n" +
-    "    </ol></script><div class=\"row\"><div ng-include=\"'breadcrumbResult.html'\"></div><h1 style=\"padding-left: 8px\">Ma recherche</h1><div class=\"resultDiv\"><div class=\"\" style=\"padding-right: 0\"><!-- recherche --><div class=\"quoi\"><div class=\"form-group\" mw-container=\"form.uType\"><label for=\"uType\" class=\"control-label\">Quoi*:</label><div class=\"\"><input type=\"text\" name=\"uType\" ng-model=\"vm.Model.Type\" class=\"form-control\" uib-typeahead=\"type for type in vm.Types | filter:$viewValue | limitTo:8\" mw-validate=\"vm.Rules.Type\"></div></div></div><div class=\"\"><div class=\"form-group\" mw-container=\"form.uOu\"><label class=\"control-label\">Ou* :</label><div class=\"\"><input type=\"text\" name=\"uOu\" ng-model=\"vm.Model.Ou\" class=\"form-control\" mw-validate=\"vm.Rules.Ou\" g-places-autocomplete></div></div></div><a href=\"#\" ng-if=\"!vm.plus\" ng-click=\"vm.plus=true\" class=\"moreCriteria\">Plus de critères</a><div class=\"\" style=\"overflow: hidden; height: 280px\"><div ui-gmap-google-map id=\"map-regie\" center=\"vm.map.center\" zoom=\"vm.map.zoom\"><ui-gmap-markers models=\"vm.map.pointList\" coords=\"'position'\" idkey=\"'id'\" click=\"click\" events=\"vm.map.markers2Events\" icon=\"'icon'\"></ui-gmap-markers></div></div></div><!-- recherche --><div ng-repeat-start=\"object in vm.objects\" ng-class=\"object.class\" class=\"resultItem\" ng-mouseover=\"object.mouseover()\" ng-mouseout=\"object.mouseout()\" ng-click=\"object.click()\"><span class=\"image\"><img ng-src=\"{{object.img}}\"> <img class=\"user\" ng-src=\"{{object.user}}\"><div class=\"price\">{{object.price}} €</div></span> <span class=\"desc\"><div class=\"title\">{{object.title}}</div><div class=\"text\">{{object.texte}}</div><div class=\"dispo\">{{object.dispo}}</div></span></div><div style=\"clear:both\" ng-repeat-end></div></div><div ng-include=\"'breadcrumbResult.html'\"></div></div><style>.resultDiv {\r" +
+    "    </ol></script><div class=\"row\"><div ng-include=\"'breadcrumbResult.html'\"></div><h1 style=\"padding-left: 8px\">Ma recherche</h1><div class=\"resultDiv\"><div class=\"\" style=\"padding-right: 0; margin-bottom: 15px\"><!-- recherche --><div class=\"quoi\"><div class=\"form-group\" mw-container=\"form.uType\"><label for=\"uType\" class=\"control-label\">Quoi*:</label><div class=\"\"><input type=\"text\" name=\"uType\" ng-model=\"vm.Model.Type\" class=\"form-control\" uib-typeahead=\"type for type in vm.Types | filter:$viewValue | limitTo:8\" mw-validate=\"vm.Rules.Type\"></div></div></div><div class=\"\"><div class=\"form-group\" mw-container=\"form.uOu\"><label class=\"control-label\">Ou* :</label><div class=\"\"><input type=\"text\" name=\"uOu\" ng-model=\"vm.Model.Ou\" class=\"form-control\" mw-validate=\"vm.Rules.Ou\" g-places-autocomplete></div></div></div><a href=\"#\" ng-if=\"!vm.plus\" ng-click=\"vm.plus=true\" class=\"moreCriteria\">Plus de critères</a><div class=\"\" style=\"overflow: hidden; height: 280px\"><div ui-gmap-google-map id=\"map-regie\" center=\"vm.map.center\" zoom=\"vm.map.zoom\"><ui-gmap-markers models=\"vm.map.pointList\" coords=\"'position'\" idkey=\"'id'\" click=\"click\" events=\"vm.map.markers2Events\" icon=\"'icon'\"></ui-gmap-markers></div></div></div><!-- recherche --><div ng-repeat-start=\"object in vm.objects\" ng-class=\"object.class\" class=\"resultItem\" ng-mouseover=\"object.mouseover()\" ng-mouseout=\"object.mouseout()\" ng-click=\"object.click()\"><span class=\"image\"><img class=\"myImage\" ng-src=\"{{object.img}}\"> <img class=\"user\" ng-src=\"{{object.user}}\"><div class=\"price\">{{object.price}} €</div></span> <span class=\"desc\"><div class=\"title\">{{object.title}}</div><div class=\"text\">{{object.texte}}</div><div class=\"dispo\">{{object.dispo}}</div></span></div><div style=\"clear:both\" ng-repeat-end></div></div><div ng-include=\"'breadcrumbResult.html'\"></div></div><style>.resultDiv {\r" +
     "\n" +
     "    padding: 0 10px;\r" +
     "\n" +
@@ -207,6 +207,8 @@
     "\n" +
     "    margin-bottom: 10px;\r" +
     "\n" +
+    "    position: relative;\r" +
+    "\n" +
     "}\r" +
     "\n" +
     ".resultItem img {\r" +
@@ -229,6 +231,8 @@
     "\n" +
     "    width: 30%;\r" +
     "\n" +
+    "    height: 145px;\r" +
+    "\n" +
     "}\r" +
     "\n" +
     "\r" +
@@ -247,11 +251,21 @@
     "\n" +
     ".resultItem .price {\r" +
     "\n" +
-    "    font-size: 25px;\r" +
+    "        font-size: 25px;\r" +
     "\n" +
-    "    color: #e7711b;\r" +
+    "    color: #ffffff;\r" +
     "\n" +
-    "}\r" +
+    "    display: inline-block;\r" +
+    "\n" +
+    "    position: absolute;\r" +
+    "\n" +
+    "    background-color: #528894;\r" +
+    "\n" +
+    "    bottom: 45px;\r" +
+    "\n" +
+    "    padding-right: 5px;\r" +
+    "\n" +
+    "    padding-left: 15px;}\r" +
     "\n" +
     "\r" +
     "\n" +
@@ -259,11 +273,17 @@
     "\n" +
     "    position: absolute;\r" +
     "\n" +
-    "    width: 60px;\r" +
+    "    width: 60px !important;\r" +
     "\n" +
-    "    left: 105px;\r" +
+    "    left: 92px;\r" +
     "\n" +
-    "    bottom: 93px;\r" +
+    "    bottom: 5px;\r" +
+    "\n" +
+    "}\r" +
+    "\n" +
+    ".myImage {\r" +
+    "\n" +
+    "    height:118px !important;\r" +
     "\n" +
     "}</style>"
   );
