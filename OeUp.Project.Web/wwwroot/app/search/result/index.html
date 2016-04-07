@@ -7,11 +7,11 @@
 </script>
 <div class="row">
 <div ng-include="'breadcrumbResult.html'"></div>   
-<h1>Ma recherche</h1>
+<h1 style="padding-left: 8px;">Ma recherche</h1>
    
 
 <div class="resultDiv">
-    <div class="" style="padding-right: 0;" >
+    <div class="" style="padding-right: 0; margin-bottom: 15px;" >
        <!-- recherche -->
         <div class="quoi">
                         
@@ -43,7 +43,8 @@
        <!-- recherche --> 
         <div ng-repeat-start="object in vm.objects" ng-class="object.class" class="resultItem" ng-mouseover="object.mouseover()" ng-mouseout="object.mouseout()" ng-click="object.click()">
             <span class="image">
-                <img ng-src="{{object.img}}"/>
+                <img class="myImage" ng-src="{{object.img}}"/>
+                <img class="user" ng-src="{{object.user}}"/>
                 <div class="price">{{object.price}} €</div>
             </span>
             <span class="desc">
@@ -58,6 +59,14 @@
 
 <div ng-include="'breadcrumbResult.html'"></div>   
 
+</div>
+
+    
+<div class="myFloating" id="toDelete">
+    <div class="myTitle">Vous possédez un véhicle?</div>
+    <div class="myDesc">Consultez nos offres d'assurances AXA</div>
+    <button class="btn-perso myButton"><img width="100%" src="images/CestP.png"/></button>
+    <div class="myClose" onclick="document.getElementById('toDelete').className ='myFloating hide'">X</div>
 </div>
 <style>
 .resultDiv {
@@ -78,6 +87,7 @@
     padding-left: 5px;
     border-bottom: 1px #ccc solid;
     margin-bottom: 10px;
+    position: relative;
 }
 .resultItem img {
   float: right;
@@ -88,18 +98,76 @@
 }
 .resultItem .image {
     display: inline-block;
-    width: 30%;
+    width: 47%;
+    height: 145px;
 }
 
 .resultItem .desc {
     display: inline-block;
-    width: 70%;
+    width: 53%;
     float: right;
     padding-left: 5px;
 }
 .resultItem .price {
-    font-size: 25px;
-    color: #e7711b;
+        font-size: 25px;
+    color: #ffffff;
+    display: inline-block;
+    position: absolute;
+    background-color: #528894;
+    bottom: 45px;
+    padding-right: 5px;
+    padding-left: 15px;}
+
+.user {
+    position: absolute;
+    width: 60px !important;
+    left: 92px;
+    bottom: 5px;
+}
+.myImage {
+    height:118px !important;
+    width: 157px !important;
 }
 
+.myFloating {
+    position: fixed;
+    bottom: 20px;
+    width: 92%;
+    padding: 10px;
+    background: #fff;
+    border: #000 2px solid;
+        padding-right: 20px;
+}
+
+.myTitle {
+    font-weight: bold;
+    text-align: center;
+}
+
+.myDesc {
+    text-align: center;
+}
+
+.myButton {    
+    margin-right: 15px;
+    margin-top: 5px;
+}
+
+.hide {
+    display: none;
+}
+
+.btn-perso {
+        background-color: transparent;
+        border: none;
+        width: 200px;
+        float: right;
+    }
+
+.myClose {
+    position: absolute;
+    right: 9px;
+    padding: 6px;
+    top: 3px;
+}
 </style>

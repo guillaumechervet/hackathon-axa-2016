@@ -18,9 +18,17 @@
 
 
 
-<form name="form" role="form" class="form-horizontal"  autocomplete="off" enctype="multipart/form-data" novalidate mw-submit="vm.submit(form)">
+<form name="form" style="position: relative;" role="form" class="form-horizontal"  autocomplete="off" enctype="multipart/form-data" novalidate mw-submit="vm.submit(form)">
 <div class="form-group" >
-                        <img src="images/place-parking2.jpg" />
+                        <img src="images/place-parking2.jpg" width="100%" />
+</div>
+
+
+<div class="form-group">
+                        <label for="uType" class="col-sm-3 control-label">Assurance :</label>
+                        <div class="col-sm-4">
+                           <img src="/images/AXA_Logo.png" style="width:40px; height:40px;" /> 
+                        </div>
 </div>
 
 <div class="form-group">
@@ -60,17 +68,10 @@
 </div>
 
 
-<div class="form-group">
-                        <label for="uType" class="col-sm-3 control-label">Assurance :</label>
-                        <div class="col-sm-4">
-                           <img src="/images/AXA_Logo.png" style="width:40px; height:40px;" /> 
-                        </div>
-</div>
-
 
 
   
-                    <div class="form-group"  style="height:60px;">
+                    <div class="form-group myButton" style="height:60px;">
                             <div class="col-sm-3"> </div>
                             <div class="col-sm-4">
                                 <button type="submit" class="btn btn-success">Valider</button>
@@ -87,3 +88,20 @@
 <div ng-include="'breadcrumbValidate.html'"></div>
 
  </div>
+
+ <style type="text/css">
+ .myButton {
+    height: 40px;
+    position: absolute;
+    top: 192px;
+    right: 10px;
+ }
+
+ .myButton button {
+    width: 150px;
+    height: 40px;
+    border: 1px white solid;
+    font-size: 20px;
+ }
+
+ </style>
