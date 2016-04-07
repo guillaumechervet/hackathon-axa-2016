@@ -42,7 +42,9 @@
                       </div>
                       </div>
                        <div class="col-sm-2">
-                      <button type="submit" class="btn btn-success">Rechercher</button>
+                      <button type="submit" class="btn-perso">
+                          <img src="images/jeRecherche.png" width="100%;"/>
+                      </button>
                       </div>
                      <div class="col-sm-12">
                       <a href="#" ng-if="!vm.plus" ng-click="vm.plus=true">Plus de critères</a>
@@ -93,7 +95,9 @@
                     <div class="form-group"  style="height:60px;">
                             <div class="col-sm-3"> </div>
                             <div class="col-sm-4">
-                                <button type="submit" class="btn btn-success">Rechercher</button>
+                              <button type="submit" class="btn-perso">
+                                  <img src="images/jeRecherche.png" width="100%;"/>
+                              </button>
                             </div>
                         </div>
  </div>
@@ -103,3 +107,17 @@
 <div ng-include="'breadcrumbAddBien.html'"></div>
 
    </div>
+
+<style type="text/css">
+    .btn-perso {
+        background-color: transparent;
+        border: none;
+        width: 200px;
+        float: right;
+        margin-bottom: 15px;
+        margin-right: -20px;
+    }
+    .btn-perso img{
+        width: 100%;
+    }
+</style>
