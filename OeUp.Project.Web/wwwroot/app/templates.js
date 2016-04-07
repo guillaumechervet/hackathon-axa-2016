@@ -12,12 +12,38 @@
 
 
   $templateCache.put('/wwwroot/app/home/index.html',
-    "<div class=\"row\"><iframe id=\"ytplayer\" type=\"text/html\" width=\"640\" height=\"390\" src=\"http://www.youtube.com/embed/M7lc1UVf-VE?autoplay=0&amp;origin=http://example.com\" frameborder=\"0\" style=\"padding: 10px;width: 100%\"></iframe><div class=\"col-md-6\" style=\"width:50%; float: left\"><div class=\"panel panel-default\"><div class=\"panel-heading\">Rechercher</div><div class=\"panel-body\"><a href=\"/rechercher\">Images</a></div><div class=\"panel-footer\"></div></div></div><div class=\"col-md-6\" style=\"width:50%; float: right\"><div class=\"panel panel-default\"><div class=\"panel-heading\">Proposer</div><div class=\"panel-body\"><a href=\"/proposer\">Images</a></div><div class=\"panel-footer\"></div></div></div></div>"
+    "<div class=\"row\"><iframe id=\"ytplayer\" type=\"text/html\" width=\"640\" height=\"390\" src=\"http://www.youtube.com/embed/M7lc1UVf-VE?autoplay=0&amp;origin=http://example.com\" frameborder=\"0\" style=\"padding: 10px;width: 100%\"></iframe><div class=\"col-md-6\" style=\"width:50%; float: left; padding-right:0\"><a href=\"/rechercher\" class=\"jeRecherche\"><img src=\"images/jeRecherche.png\"></a></div><div class=\"col-md-6\" style=\"width:50%; float: right; padding-right:0\"><a href=\"/proposer\" class=\"jePropose\"><img src=\"images/jePropose.png\"></a></div></div><style type=\"text/css\">.jeRecherche {\r" +
+    "\n" +
+    "        width: 100%;\r" +
+    "\n" +
+    "        float: left;\r" +
+    "\n" +
+    "    }\r" +
+    "\n" +
+    "    .jeRecherche img{\r" +
+    "\n" +
+    "        width: 95%;\r" +
+    "\n" +
+    "    }\r" +
+    "\n" +
+    "    .jePropose {\r" +
+    "\n" +
+    "        width: 100%;\r" +
+    "\n" +
+    "        float: right;\r" +
+    "\n" +
+    "    }\r" +
+    "\n" +
+    "    .jePropose img{\r" +
+    "\n" +
+    "        width: 95%;\r" +
+    "\n" +
+    "    }</style>"
   );
 
 
   $templateCache.put('/wwwroot/app/menu/menu.html',
-    "<img src=\"/images/logo.png\" alt=\"Logo\" class=\"img-responsive\"><!--<nav class=\"navbar navbar-default\" ng-controller=\"MenuController as menu\" >\r" +
+    "<a href=\"/\"><img src=\"/images/logo.png\" alt=\"Logo\" class=\"img-responsive\"></a><!--<nav class=\"navbar navbar-default\" ng-controller=\"MenuController as menu\" >\r" +
     "\n" +
     "  <div class=\"container-fluid\">\r" +
     "\n" +
@@ -75,7 +101,7 @@
     "\n" +
     "    <li class=\"active\">Proposer</li>\r" +
     "\n" +
-    "    </ol></script><div ng-include=\"'breadcrumbProposer.html'\"></div><h1>Proposer vos biens</h1><div style=\"height:40px\"><button type=\"button\" class=\"btn btn-default pull-right\" ng-click=\"vm.navAdd()\">Ajouter un bien</button></div><div ng-if=\"vm.Biens.length >0\"><h2>Liste des biens</h2><div class=\"row\"><div class=\"col-sm-6 col-md-4\" ng-repeat=\"bien in vm.Biens\"><div class=\"thumbnail\"><img ng-src=\"{{bien.MainPhoto}}\"><div class=\"caption\"><h3>{{bien.Titre}}</h3><p><span>Loué du {{bien.DateDebut | date:'dd/MM/yyyy' }} au {{bien.DateFin | date:'dd/MM/yyyy' }} : {{bien.Frequence}} de {{bien.DateDebut | date:'HH:mm' }} au {{bien.DateFin | date:'HH:mm' }}</span> {{bien.Description}}</p><p><button ng-click=\"vm.remove(bien)\" type=\"button\" class=\"btn btn-danger\" uib-popover=\"Supprimer\" popover-trigger=\"mouseenter\"><span class=\"glyphicon glyphicon-remove\"></button> <button ng-click=\"vm.edit(bien)\" type=\"button\" class=\"btn btn-edit\" uib-popover=\"Editer\" popover-trigger=\"mouseenter\"><span class=\"glyphicon glyphicon-edit\"></button></p></div></div></div></div><button type=\"button\" class=\"btn btn-default pull-right\" ng-bind=\"vm.navAdd()\">Ajouter un bien</button></div><div ng-if=\"vm.Biens.length <=0\" class=\"oeup-empty\"><p>Aucun bien déclaré.</p></div><div style=\"height:40px\"><button type=\"button\" class=\"btn btn-default pull-right\" ng-click=\"vm.navAdd()\">Ajouter un bien</button></div><div ng-include=\"'breadcrumbProposer.html'\"></div>"
+    "    </ol></script><div ng-include=\"'breadcrumbProposer.html'\"></div><h1>Proposer vos biens</h1><div style=\"height:40px\"><button type=\"button\" class=\"btn btn-default pull-right\" ng-click=\"vm.navAdd()\">Ajouter un bien</button></div><div ng-if=\"vm.Biens.length >0\"><h2>Liste des biens</h2><div class=\"row\"><div class=\"col-sm-6 col-md-4\" ng-repeat=\"bien in vm.Biens\"><div class=\"thumbnail\"><img ng-src=\"{{bien.MainPhoto}}\"><div class=\"caption\"><h3>{{bien.Titre}}</h3><p><span>Loué du {{bien.DateDebut | date:'dd/MM/yyyy' }} au {{bien.DateFin | date:'dd/MM/yyyy' }} : {{bien.Frequence}} de {{bien.DateDebut | date:'HH:mm' }} au {{bien.DateFin | date:'HH:mm' }}</span> {{bien.Description}}</p><p><button ng-click=\"vm.remove(bien)\" type=\"button\" class=\"btn btn-danger\" uib-popover=\"Supprimer\" popover-trigger=\"mouseenter\"><span class=\"glyphicon glyphicon-remove\"></button> <button ng-click=\"vm.edit(bien)\" type=\"button\" class=\"btn btn-edit\" uib-popover=\"Editer\" popover-trigger=\"mouseenter\"><span class=\"glyphicon glyphicon-edit\"></button></p></div></div></div></div></div><div ng-if=\"vm.Biens.length <=0\" class=\"oeup-empty\"><p>Aucun bien déclaré.</p></div><div style=\"height:40px\"><button type=\"button\" class=\"btn btn-default pull-right\" ng-click=\"vm.navAdd()\">Ajouter un bien</button></div><div ng-include=\"'breadcrumbProposer.html'\"></div>"
   );
 
 

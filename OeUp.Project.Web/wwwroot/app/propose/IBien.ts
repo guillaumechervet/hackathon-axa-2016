@@ -9,5 +9,6 @@
         Frequence : string;
         MainPhoto : string;
         Description : string;
+        Id : number;
     }
 }
