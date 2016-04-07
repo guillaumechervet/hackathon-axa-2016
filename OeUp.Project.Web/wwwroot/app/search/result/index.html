@@ -61,7 +61,12 @@
 
 </div>
 
-<div>
+    
+<div class="myFloating" id="toDelete">
+    <div class="myTitle">Vous possédez un véhicle?</div>
+    <div class="myDesc">Consultez nos offres d'assurances AXA</div>
+    <button class="btn-perso myButton"><img width="100%" src="images/CestP.png"/></button>
+    <div class="myClose" onclick="document.getElementById('toDelete').className ='myFloating hide'">X</div>
 </div>
 <style>
 .resultDiv {
@@ -124,4 +129,45 @@
     width: 157px !important;
 }
 
+.myFloating {
+    position: fixed;
+    bottom: 20px;
+    width: 92%;
+    padding: 10px;
+    background: #fff;
+    border: #000 2px solid;
+        padding-right: 20px;
+}
+
+.myTitle {
+    font-weight: bold;
+    text-align: center;
+}
+
+.myDesc {
+    text-align: center;
+}
+
+.myButton {    
+    margin-right: 15px;
+    margin-top: 5px;
+}
+
+.hide {
+    display: none;
+}
+
+.btn-perso {
+        background-color: transparent;
+        border: none;
+        width: 200px;
+        float: right;
+    }
+
+.myClose {
+    position: absolute;
+    right: 9px;
+    padding: 6px;
+    top: 3px;
+}
 </style>
