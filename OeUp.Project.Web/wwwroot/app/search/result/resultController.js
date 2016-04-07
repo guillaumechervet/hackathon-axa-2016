@@ -8,7 +8,8 @@ var oeup;
             $log.info("ResultController called");
             vm.objects = [{
                     img: "http://www.lettre-gratuite.fr/files/2013/03/place-parking.jpg",
-                    texte: "lololol",
+                    texte: "Place sur parking privé, idéal pour se garer au webcenter de Lille",
+                    icon: '/images/marker.png',
                     price: 10,
                     id: 1,
                     position: {
@@ -18,8 +19,9 @@ var oeup;
                 },
                 {
                     img: "http://img0.gtsstatic.com/faits-divers/mal-foutue-cette-place-de-parking_646_w620.jpg",
-                    texte: "lorem ipsum",
-                    price: 10,
+                    texte: "Place idéalement placé à l'ombre d'un arbre",
+                    icon: '/images/marker.png',
+                    price: 15,
                     id: 2,
                     position: {
                         latitude: 48.8971468, longitude: 2.1845104
@@ -37,15 +39,18 @@ var oeup;
                 maps.visualRefresh = true;
                 vm.objects.forEach(function (point) {
                     point.click = function () {
-                        $location.url('/rechercher');
+                        $location.url('/valider');
                     };
                     point.mouseover = function () {
-                        vm.HighlightObject(point);
+                        point.icon = '/images/marker-focus.png';
+                    };
+                    point.mouseout = function () {
+                        point.icon = '/images/marker.png';
                     };
                     vm.map.pointList.push(point);
                 });
             });
-            vm.map = { center: { latitude: 48.8965812, longitude: 2.318375999999944 }, zoom: 13, pointList: [], options: { streetViewControl: false } };
+            vm.map = { center: { latitude: 48.8965812, longitude: 2.2 }, zoom: 10, pointList: [], options: { streetViewControl: false } };
             vm.map.markers2Events = {
                 mouseover: function (marker, eventName, model, args) {
                     vm.HighlightObject(model);

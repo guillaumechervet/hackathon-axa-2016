@@ -99,7 +99,61 @@
     "\n" +
     "    <li class=\"active\">Ajout bien</li>\r" +
     "\n" +
-    "    </ol></script><div class=\"row\"><div ng-include=\"'breadcrumbResult.html'\"></div><h1>Resultats recherche</h1><div class=\"row\"><div class=\"col-xs-6 col-md-4\"><div ng-repeat=\"object in vm.objects\" ng-class=\"object.class\"><span height=\"120px\"><img ng-src=\"{{object.img}}\" with=\"120px\" height=\"120px\"></span> <span>{{object.texte}}</span> <span>{{object.price}} €</span></div></div><div class=\"col-xs-12 col-md-8\"><div ui-gmap-google-map id=\"map-regie\" center=\"vm.map.center\" zoom=\"vm.map.zoom\" width=\"400px\"><ui-gmap-markers models=\"vm.map.pointList\" coords=\"'position'\" idkey=\"'id'\" click=\"click\" events=\"vm.map.markers2Events\"></ui-gmap-markers></div></div></div><div ng-include=\"'breadcrumbResult.html'\"></div></div>"
+    "    </ol></script><div class=\"row\"><div ng-include=\"'breadcrumbResult.html'\"></div><h1>Resultats de la recherche</h1><div class=\"row\"><div class=\"col-xs-6 col-md-4\" style=\"width:45%; padding-right: 0\"><div ng-repeat-start=\"object in vm.objects\" ng-class=\"object.class\" class=\"resultItem\" ng-mouseover=\"object.mouseover()\" ng-mouseout=\"object.mouseout()\" ng-click=\"object.click()\"><span class=\"image\"><img ng-src=\"{{object.img}}\"><div class=\"price\">{{object.price}} €</div></span> <span class=\"desc\"><div class=\"title\">{{object.title}}</div><div class=\"text\">{{object.texte}}</div></span></div><div style=\"clear:both\" ng-repeat-end></div></div><div class=\"col-xs-12 col-md-8\" style=\"width:55%; overflow: hidden; height: 280px\"><div ui-gmap-google-map id=\"map-regie\" center=\"vm.map.center\" zoom=\"vm.map.zoom\"><ui-gmap-markers models=\"vm.map.pointList\" coords=\"'position'\" idkey=\"'id'\" click=\"click\" events=\"vm.map.markers2Events\" icon=\"'icon'\"></ui-gmap-markers></div></div></div><div ng-include=\"'breadcrumbResult.html'\"></div></div><style>.resultItem {\r" +
+    "\n" +
+    "    float: right;\r" +
+    "\n" +
+    "    padding-left: 5px;\r" +
+    "\n" +
+    "    border-bottom: 1px #ccc solid;\r" +
+    "\n" +
+    "    margin-bottom: 10px;\r" +
+    "\n" +
+    "}\r" +
+    "\n" +
+    ".resultItem img {\r" +
+    "\n" +
+    "  float: right;\r" +
+    "\n" +
+    "  width: 100%;\r" +
+    "\n" +
+    "}\r" +
+    "\n" +
+    ".resultItem .title {\r" +
+    "\n" +
+    "    font-weight: bold;\r" +
+    "\n" +
+    "}\r" +
+    "\n" +
+    ".resultItem .image {\r" +
+    "\n" +
+    "    display: inline-block;\r" +
+    "\n" +
+    "    width: 30%;\r" +
+    "\n" +
+    "}\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    ".resultItem .desc {\r" +
+    "\n" +
+    "    display: inline-block;\r" +
+    "\n" +
+    "    width: 70%;\r" +
+    "\n" +
+    "    float: right;\r" +
+    "\n" +
+    "    padding-left: 5px;\r" +
+    "\n" +
+    "}\r" +
+    "\n" +
+    ".resultItem .price {\r" +
+    "\n" +
+    "    font-size: 25px;\r" +
+    "\n" +
+    "    color: #e7711b;\r" +
+    "\n" +
+    "}</style>"
   );
 
 
@@ -114,6 +168,6 @@
     "\n" +
     "    <li class=\"active\">Valider</li>\r" +
     "\n" +
-    "    </ol></script><div style=\"row\"><div ng-include=\"'breadcrumbValidate.html'\"></div><h1>Valider</h1><div><div class=\"form-group\"><label for=\"uType\" class=\"col-sm-3 control-label\">Quoi*:</label><div class=\"col-sm-4\"><label>Place de parking entre 9h et 18h</label></div></div><div class=\"clearfix\"></div><div class=\"form-group\" style=\"height:60px\"><div class=\"col-sm-3\"></div><div class=\"col-sm-4\"><button type=\"submit\" class=\"btn btn-success\">Valider</button></div></div></div><div ng-include=\"'breadcrumbValidate.html'\"></div></div>"
+    "    </ol></script><div style=\"row\"><div ng-include=\"'breadcrumbValidate.html'\"></div><h1>Valider</h1><form name=\"form\" role=\"form\" class=\"form-horizontal\" autocomplete=\"off\" enctype=\"multipart/form-data\" novalidate mw-submit=\"vm.submit(form)\"><div class=\"form-group\"><label for=\"uType\" class=\"col-sm-3 control-label\">Quoi*:</label><div class=\"col-sm-4\"><span>Place de parking</span></div></div><div class=\"form-group\"><label for=\"uType\" class=\"col-sm-3 control-label\">Dates*:</label><div class=\"col-sm-4\"><span>07/04/2016 au 08/04/2016 de 9h à 18h</span></div></div><div class=\"form-group\"><label for=\"uType\" class=\"col-sm-3 control-label\">Qui*:</label><div class=\"col-sm-4\"><span>Jacques Le corre (<i class=\"glyphicon ng-scope glyphicon-star\" i><i class=\"glyphicon ng-scope glyphicon-star\" i><i class=\"glyphicon ng-scope glyphicon-star\" i><i class=\"glyphicon ng-scope glyphicon-star\" i><i class=\"glyphicon ng-scope glyphicon-star-empty\" i>)</span></div></div><div class=\"form-group\"><label for=\"uType\" class=\"col-sm-3 control-label\">Prix*:</label><div class=\"col-sm-4\"><span>4 € * 2 jour = <b>8 €</b></span></div></div><div class=\"form-group\"><label for=\"uType\" class=\"col-sm-3 control-label\">Assurance:</label><div class=\"col-sm-4\"><img src=\"/images/AXA_Logo.png\" style=\"width:40px; height:40px\"></div></div><div class=\"form-group\" style=\"height:60px\"><div class=\"col-sm-3\"></div><div class=\"col-sm-4\"><button type=\"submit\" class=\"btn btn-success\">Valider</button></div></div></form><div ng-include=\"'breadcrumbValidate.html'\"></div></div>"
   );
  return {}; }]);}());
