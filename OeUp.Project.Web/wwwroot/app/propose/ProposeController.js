@@ -42,6 +42,12 @@ var oeup;
             vm.navAdd = function () {
                 $location.path('/proposer/ajouter');
             };
+            vm.edit = function () {
+                $location.path('/proposer/modifier');
+            };
+            vm.remove = function () {
+                $location.path('/proposer');
+            };
         }
         return ProposeController;
     }());

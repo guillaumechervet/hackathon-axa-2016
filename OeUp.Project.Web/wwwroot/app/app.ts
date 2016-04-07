@@ -12,7 +12,7 @@ module oeup {
         'uiGmapgoogle-maps'
     ]);
 
-    app.config(["$routeProvider", "$locationProvider", '$httpProvider','uiGmapGoogleMapApiProvider', ($routeProvider, $locationProvider,$httpProvider,uiGmapGoogleMapApiProvider) => {
+    app.config(["$routeProvider", "$locationProvider", '$httpProvider','uiGmapGoogleMapApiProvider',($routeProvider, $locationProvider,$httpProvider,uiGmapGoogleMapApiProvider) => {
         
         $httpProvider.interceptors.push('HttpLoaderInterceptor');
         $httpProvider.interceptors.push('HttpDateInterceptor');
@@ -32,55 +32,22 @@ module oeup {
 		    .when('/rechercher', {
 			    templateUrl: '/app/search/index.html',
 			    controller: 'SearchController',
-                controllerAs: 'vm'//,
-			    /*resolve: {
-				  initProjets: [
-						    "ProjectService", (ProjectService) => {
-							    return ProjectService.getProjects();
-						    }
-					    ]
-			    }*/
+                controllerAs: 'vm'
 		    })
             .when('/resultat', {
 			    templateUrl: '/app/search/result/index.html',
 			    controller: 'ResultController',
-                controllerAs: 'vm'//,
-			    /*resolve: {
-				  initProjets: [
-						    "ProjectService", (ProjectService) => {
-							    return ProjectService.getProjects();
-						    }
-					    ]
-			    }*/
+                controllerAs: 'vm'
 		    })
-      .when('/valider', {
+            .when('/valider', {
 			    templateUrl: '/app/search/validate/index.html',
 			    controller: 'ValidateController',
-                controllerAs: 'vm'//,
-			    /*resolve: {s
-				  initProjets: [
-						    "ProjectService", (ProjectService) => {
-							    return ProjectService.getProjects();
-						    }
-					    ]
-			    }*/
+                controllerAs: 'vm'
 		    })
             .when('/proposer', {
 			    templateUrl: '/app/propose/index.html',
 			    controller: 'ProposeController',
-                controllerAs: 'vm',
-			   /*  resolve: {
-				 initSynonymes: [
-						    "ManufacturerSynonymeService", (ManufacturerSynonymeService) => {
-							    return ManufacturerSynonymeService.getSynonymes();
-						    }
-					    ],
-                  initManufacturersReference: [
-						    "ManufacturerTranscoService", (ManufacturerTranscoService) => {
-							    return ManufacturerTranscoService.getManufacturersReference();
-						    }
-					    ]
-			    }*/
+                controllerAs: 'vm'
 		    })
             .when('/proposer/ajouter', {
 			    templateUrl: '/app/propose/addBien.html',
