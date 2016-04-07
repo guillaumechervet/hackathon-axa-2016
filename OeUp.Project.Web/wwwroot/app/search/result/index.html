@@ -10,8 +10,8 @@
 <h1>Resultats de la recherche</h1>
 
 <div class="row">
-    <div class="col-xs-6 col-md-4" style="width:45%; padding-right: 0;">
-        <div ng-repeat-start="object in vm.objects" ng-class="object.class" class="resultItem">
+    <div class="col-xs-6 col-md-4" style="width:45%; padding-right: 0;" >
+        <div ng-repeat-start="object in vm.objects" ng-class="object.class" class="resultItem" ng-mouseover="object.mouseover()" ng-mouseout="object.mouseout()" ng-click="object.click()">
             <span class="image">
                 <img ng-src="{{object.img}}"/>
                 <div class="price">{{object.price}} €</div>
@@ -23,9 +23,11 @@
         </div>
         <div style="clear:both;" ng-repeat-end></div>
     </div>
+
 <div class="col-xs-12 col-md-8" style="width:55%; overflow: hidden; height: 280px;">
     <div ui-gmap-google-map id="map-regie" center='vm.map.center' zoom='vm.map.zoom'>
-         <ui-gmap-markers models="vm.map.pointList" coords="'position'" idKey="'id'" click="click" events="vm.map.markers2Events"></ui-gmap-markers>
+         <ui-gmap-markers models="vm.map.pointList" coords="'position'" idKey="'id'" click="click" events="vm.map.markers2Events"  icon="'icon'"></ui-gmap-markers>
+
         
     </div>
     </div>
