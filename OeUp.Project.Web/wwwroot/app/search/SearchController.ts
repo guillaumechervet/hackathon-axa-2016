@@ -24,7 +24,8 @@ module oeup {
             "Scie",
             "Tournevis",
             "Co-voiturage",
-            "Voiture"
+            "Voiture",
+            "Raquette de tennis"
             ];
             
              vm.Model = {Price:0};

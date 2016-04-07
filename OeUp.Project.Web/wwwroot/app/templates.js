@@ -99,7 +99,61 @@
     "\n" +
     "    <li class=\"active\">Ajout bien</li>\r" +
     "\n" +
-    "    </ol></script><div class=\"row\"><div ng-include=\"'breadcrumbResult.html'\"></div><h1>Resultats recherche</h1><div class=\"row\"><div class=\"col-xs-6 col-md-4\"><div ng-repeat=\"object in vm.objects\" ng-class=\"object.class\"><span height=\"120px\"><img ng-src=\"{{object.img}}\" with=\"120px\" height=\"120px\"></span> <span>{{object.texte}}</span> <span>{{object.price}} €</span></div></div><div class=\"col-xs-12 col-md-8\"><div ui-gmap-google-map id=\"map-regie\" center=\"vm.map.center\" zoom=\"vm.map.zoom\" width=\"400px\"><ui-gmap-markers models=\"vm.map.pointList\" coords=\"'position'\" idkey=\"'id'\" click=\"click\" events=\"vm.map.markers2Events\"></ui-gmap-markers></div></div></div><div ng-include=\"'breadcrumbResult.html'\"></div></div>"
+    "    </ol></script><div class=\"row\"><div ng-include=\"'breadcrumbResult.html'\"></div><h1>Resultats de la recherche</h1><div class=\"row\"><div class=\"col-xs-6 col-md-4\" style=\"width:45%; padding-right: 0\"><div ng-repeat-start=\"object in vm.objects\" ng-class=\"object.class\" class=\"resultItem\"><span class=\"image\"><img ng-src=\"{{object.img}}\"><div class=\"price\">{{object.price}} €</div></span> <span class=\"desc\"><div class=\"title\">{{object.title}}</div><div class=\"text\">{{object.texte}}</div></span></div><div style=\"clear:both\" ng-repeat-end></div></div><div class=\"col-xs-12 col-md-8\" style=\"width:55%; overflow: hidden; height: 280px\"><div ui-gmap-google-map id=\"map-regie\" center=\"vm.map.center\" zoom=\"vm.map.zoom\"><ui-gmap-markers models=\"vm.map.pointList\" coords=\"'position'\" idkey=\"'id'\" click=\"click\" events=\"vm.map.markers2Events\"></ui-gmap-markers></div></div></div><div ng-include=\"'breadcrumbResult.html'\"></div></div><style>.resultItem {\r" +
+    "\n" +
+    "    float: right;\r" +
+    "\n" +
+    "    padding-left: 5px;\r" +
+    "\n" +
+    "    border-bottom: 1px #ccc solid;\r" +
+    "\n" +
+    "    margin-bottom: 10px;\r" +
+    "\n" +
+    "}\r" +
+    "\n" +
+    ".resultItem img {\r" +
+    "\n" +
+    "  float: right;\r" +
+    "\n" +
+    "  width: 100%;\r" +
+    "\n" +
+    "}\r" +
+    "\n" +
+    ".resultItem .title {\r" +
+    "\n" +
+    "    font-weight: bold;\r" +
+    "\n" +
+    "}\r" +
+    "\n" +
+    ".resultItem .image {\r" +
+    "\n" +
+    "    display: inline-block;\r" +
+    "\n" +
+    "    width: 30%;\r" +
+    "\n" +
+    "}\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    ".resultItem .desc {\r" +
+    "\n" +
+    "    display: inline-block;\r" +
+    "\n" +
+    "    width: 70%;\r" +
+    "\n" +
+    "    float: right;\r" +
+    "\n" +
+    "    padding-left: 5px;\r" +
+    "\n" +
+    "}\r" +
+    "\n" +
+    ".resultItem .price {\r" +
+    "\n" +
+    "    font-size: 25px;\r" +
+    "\n" +
+    "    color: #e7711b;\r" +
+    "\n" +
+    "}</style>"
   );
 
 
