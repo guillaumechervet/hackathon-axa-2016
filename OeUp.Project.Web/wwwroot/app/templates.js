@@ -12,12 +12,38 @@
 
 
   $templateCache.put('/wwwroot/app/home/index.html',
-    "<div class=\"row\"><iframe id=\"ytplayer\" type=\"text/html\" width=\"640\" height=\"390\" src=\"http://www.youtube.com/embed/M7lc1UVf-VE?autoplay=0&amp;origin=http://example.com\" frameborder=\"0\" style=\"padding: 10px;width: 100%\"></iframe><div class=\"col-md-6\" style=\"width:50%; float: left\"><div class=\"panel panel-default\"><div class=\"panel-heading\">Rechercher</div><div class=\"panel-body\"><a href=\"/rechercher\">Images</a></div><div class=\"panel-footer\"></div></div></div><div class=\"col-md-6\" style=\"width:50%; float: right\"><div class=\"panel panel-default\"><div class=\"panel-heading\">Proposer</div><div class=\"panel-body\"><a href=\"/proposer\">Images</a></div><div class=\"panel-footer\"></div></div></div></div>"
+    "<div class=\"row\"><iframe id=\"ytplayer\" type=\"text/html\" width=\"640\" height=\"390\" src=\"http://www.youtube.com/embed/M7lc1UVf-VE?autoplay=0&amp;origin=http://example.com\" frameborder=\"0\" style=\"padding: 10px;width: 100%\"></iframe><div class=\"col-md-6\" style=\"width:50%; float: left; padding-right:0\"><a href=\"/rechercher\" class=\"jeRecherche\"><img src=\"images/jeRecherche.png\"></a></div><div class=\"col-md-6\" style=\"width:50%; float: right; padding-right:0\"><a href=\"/proposer\" class=\"jePropose\"><img src=\"images/jePropose.png\"></a></div></div><style type=\"text/css\">.jeRecherche {\r" +
+    "\n" +
+    "        width: 100%;\r" +
+    "\n" +
+    "        float: left;\r" +
+    "\n" +
+    "    }\r" +
+    "\n" +
+    "    .jeRecherche img{\r" +
+    "\n" +
+    "        width: 95%;\r" +
+    "\n" +
+    "    }\r" +
+    "\n" +
+    "    .jePropose {\r" +
+    "\n" +
+    "        width: 100%;\r" +
+    "\n" +
+    "        float: right;\r" +
+    "\n" +
+    "    }\r" +
+    "\n" +
+    "    .jePropose img{\r" +
+    "\n" +
+    "        width: 95%;\r" +
+    "\n" +
+    "    }</style>"
   );
 
 
   $templateCache.put('/wwwroot/app/menu/menu.html',
-    "<img src=\"/images/logo.png\" alt=\"Logo\" class=\"img-responsive\"><!--<nav class=\"navbar navbar-default\" ng-controller=\"MenuController as menu\" >\r" +
+    "<a href=\"/\"><img src=\"/images/logo.png\" alt=\"Logo\" class=\"img-responsive\"></a><!--<nav class=\"navbar navbar-default\" ng-controller=\"MenuController as menu\" >\r" +
     "\n" +
     "  <div class=\"container-fluid\">\r" +
     "\n" +
