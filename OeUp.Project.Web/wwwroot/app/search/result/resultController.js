@@ -31,7 +31,7 @@ var oeup;
                 },
                 {
                     img: "http://img0.gtsstatic.com/faits-divers/mal-foutue-cette-place-de-parking_646_w620.jpg",
-                    texte: "Place idéalement placé à l'ombre d'un arbre",
+                    texte: "Place à l'ombre d'un arbre",
                     icon: '/images/80orange.png',
                     price: 80,
                     id: 2,
