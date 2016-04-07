@@ -171,7 +171,7 @@
     "\n" +
     "    <li class=\"active\">Ma recherche</li>\r" +
     "\n" +
-    "    </ol></script><div class=\"row\"><div ng-include=\"'breadcrumbResult.html'\"></div><h1 style=\"padding-left: 8px\">Ma recherche</h1><div class=\"resultDiv\"><div class=\"\" style=\"padding-right: 0; margin-bottom: 15px\"><!-- recherche --><div class=\"quoi\"><div class=\"form-group\" mw-container=\"form.uType\"><label for=\"uType\" class=\"control-label\">Quoi*:</label><div class=\"\"><input type=\"text\" name=\"uType\" ng-model=\"vm.Model.Type\" class=\"form-control\" uib-typeahead=\"type for type in vm.Types | filter:$viewValue | limitTo:8\" mw-validate=\"vm.Rules.Type\"></div></div></div><div class=\"\"><div class=\"form-group\" mw-container=\"form.uOu\"><label class=\"control-label\">Ou* :</label><div class=\"\"><input type=\"text\" name=\"uOu\" ng-model=\"vm.Model.Ou\" class=\"form-control\" mw-validate=\"vm.Rules.Ou\" g-places-autocomplete></div></div></div><a href=\"#\" ng-if=\"!vm.plus\" ng-click=\"vm.plus=true\" class=\"moreCriteria\">Plus de critères</a><div class=\"\" style=\"overflow: hidden; height: 280px\"><div ui-gmap-google-map id=\"map-regie\" center=\"vm.map.center\" zoom=\"vm.map.zoom\"><ui-gmap-markers models=\"vm.map.pointList\" coords=\"'position'\" idkey=\"'id'\" click=\"click\" events=\"vm.map.markers2Events\" icon=\"'icon'\"></ui-gmap-markers></div></div></div><!-- recherche --><div ng-repeat-start=\"object in vm.objects\" ng-class=\"object.class\" class=\"resultItem\" ng-mouseover=\"object.mouseover()\" ng-mouseout=\"object.mouseout()\" ng-click=\"object.click()\"><span class=\"image\"><img class=\"myImage\" ng-src=\"{{object.img}}\"> <img class=\"user\" ng-src=\"{{object.user}}\"><div class=\"price\">{{object.price}} €</div></span> <span class=\"desc\"><div class=\"title\">{{object.title}}</div><div class=\"text\">{{object.texte}}</div><div class=\"dispo\">{{object.dispo}}</div></span></div><div style=\"clear:both\" ng-repeat-end></div></div><div ng-include=\"'breadcrumbResult.html'\"></div></div><style>.resultDiv {\r" +
+    "    </ol></script><div class=\"row\"><div ng-include=\"'breadcrumbResult.html'\"></div><h1 style=\"padding-left: 8px\">Ma recherche</h1><div class=\"resultDiv\"><div class=\"\" style=\"padding-right: 0; margin-bottom: 15px\"><!-- recherche --><div class=\"quoi\"><div class=\"form-group\" mw-container=\"form.uType\"><label for=\"uType\" class=\"control-label\">Quoi*:</label><div class=\"\"><input type=\"text\" name=\"uType\" ng-model=\"vm.Model.Type\" class=\"form-control\" uib-typeahead=\"type for type in vm.Types | filter:$viewValue | limitTo:8\" mw-validate=\"vm.Rules.Type\"></div></div></div><div class=\"\"><div class=\"form-group\" mw-container=\"form.uOu\"><label class=\"control-label\">Ou* :</label><div class=\"\"><input type=\"text\" name=\"uOu\" ng-model=\"vm.Model.Ou\" class=\"form-control\" mw-validate=\"vm.Rules.Ou\" g-places-autocomplete></div></div></div><a href=\"#\" ng-if=\"!vm.plus\" ng-click=\"vm.plus=true\" class=\"moreCriteria\">Plus de critères</a><div class=\"\" style=\"overflow: hidden; height: 280px\"><div ui-gmap-google-map id=\"map-regie\" center=\"vm.map.center\" zoom=\"vm.map.zoom\"><ui-gmap-markers models=\"vm.map.pointList\" coords=\"'position'\" idkey=\"'id'\" click=\"click\" events=\"vm.map.markers2Events\" icon=\"'icon'\"></ui-gmap-markers></div></div></div><!-- recherche --><div ng-repeat-start=\"object in vm.objects\" ng-class=\"object.class\" class=\"resultItem\" ng-mouseover=\"object.mouseover()\" ng-mouseout=\"object.mouseout()\" ng-click=\"object.click()\"><span class=\"image\"><img class=\"myImage\" ng-src=\"{{object.img}}\"> <img class=\"user\" ng-src=\"{{object.user}}\"><div class=\"price\">{{object.price}} €</div></span> <span class=\"desc\"><div class=\"title\">{{object.title}}</div><div class=\"text\">{{object.texte}}</div><div class=\"dispo\">{{object.dispo}}</div></span></div><div style=\"clear:both\" ng-repeat-end></div></div><div ng-include=\"'breadcrumbResult.html'\"></div></div><div></div><style>.resultDiv {\r" +
     "\n" +
     "    padding: 0 10px;\r" +
     "\n" +
@@ -229,7 +229,7 @@
     "\n" +
     "    display: inline-block;\r" +
     "\n" +
-    "    width: 30%;\r" +
+    "    width: 47%;\r" +
     "\n" +
     "    height: 145px;\r" +
     "\n" +
@@ -241,7 +241,7 @@
     "\n" +
     "    display: inline-block;\r" +
     "\n" +
-    "    width: 70%;\r" +
+    "    width: 53%;\r" +
     "\n" +
     "    float: right;\r" +
     "\n" +
@@ -285,6 +285,8 @@
     "\n" +
     "    height:118px !important;\r" +
     "\n" +
+    "    width: 157px !important;\r" +
+    "\n" +
     "}</style>"
   );
 
@@ -300,6 +302,30 @@
     "\n" +
     "    <li class=\"active\">Valider</li>\r" +
     "\n" +
-    "    </ol></script><div style=\"row\"><div ng-include=\"'breadcrumbValidate.html'\"></div><div ng-if=\"!vm.validated\"><h1>Valider</h1><form name=\"form\" role=\"form\" class=\"form-horizontal\" autocomplete=\"off\" enctype=\"multipart/form-data\" novalidate mw-submit=\"vm.submit(form)\"><div class=\"form-group\"><img src=\"images/place-parking2.jpg\"></div><div class=\"form-group\"><label for=\"uType\" class=\"col-sm-3 control-label\">Quoi :</label><div class=\"col-sm-4\"><span>Place de parking</span></div></div><div class=\"form-group\"><label for=\"uType\" class=\"col-sm-3 control-label\">Description :</label><div class=\"col-sm-4\"><span>Place sur parking privé, idéal pour se garer au webcenter de Lille.</span></div></div><div class=\"form-group\"><label for=\"uType\" class=\"col-sm-3 control-label\">Dates :</label><div class=\"col-sm-4\"><span>Du 28/03/2016 au 31/03/2017 de 10h à 16h</span></div></div><div class=\"form-group\"><label for=\"uType\" class=\"col-sm-3 control-label\">Qui :</label><div class=\"col-sm-4\"><span>Jacques Le corre (<i class=\"glyphicon ng-scope glyphicon-star\" i><i class=\"glyphicon ng-scope glyphicon-star\" i><i class=\"glyphicon ng-scope glyphicon-star\" i><i class=\"glyphicon ng-scope glyphicon-star\" i><i class=\"glyphicon ng-scope glyphicon-star-empty\" i>)</span></div></div><div class=\"form-group\"><label for=\"uType\" class=\"col-sm-3 control-label\">Prix :</label><div class=\"col-sm-4\"><span><b>72 €</b></span></div></div><div class=\"form-group\"><label for=\"uType\" class=\"col-sm-3 control-label\">Assurance :</label><div class=\"col-sm-4\"><img src=\"/images/AXA_Logo.png\" style=\"width:40px; height:40px\"></div></div><div class=\"form-group\" style=\"height:60px\"><div class=\"col-sm-3\"></div><div class=\"col-sm-4\"><button type=\"submit\" class=\"btn btn-success\">Valider</button></div></div></form></div><div ng-if=\"vm.validated\"><p class=\"text-center\" style=\"font-size:2em\">Echange entre \"Imen Necib\" et \"Jacques Le corre\" validé!</p><p class=\"text-center\"><button type=\"button\" class=\"btn btn-default\" ng-click=\"vm.goHome()\">Retour page acceuil</button></p></div><div ng-include=\"'breadcrumbValidate.html'\"></div></div>"
+    "    </ol></script><div style=\"row\"><div ng-include=\"'breadcrumbValidate.html'\"></div><div ng-if=\"!vm.validated\"><h1>Valider</h1><form name=\"form\" style=\"position: relative\" role=\"form\" class=\"form-horizontal\" autocomplete=\"off\" enctype=\"multipart/form-data\" novalidate mw-submit=\"vm.submit(form)\"><div class=\"form-group\"><img src=\"images/place-parking2.jpg\" width=\"100%\"></div><div class=\"form-group\"><label for=\"uType\" class=\"col-sm-3 control-label\">Assurance :</label><div class=\"col-sm-4\"><img src=\"/images/AXA_Logo.png\" style=\"width:40px; height:40px\"></div></div><div class=\"form-group\"><label for=\"uType\" class=\"col-sm-3 control-label\">Quoi :</label><div class=\"col-sm-4\"><span>Place de parking</span></div></div><div class=\"form-group\"><label for=\"uType\" class=\"col-sm-3 control-label\">Description :</label><div class=\"col-sm-4\"><span>Place sur parking privé, idéal pour se garer au webcenter de Lille.</span></div></div><div class=\"form-group\"><label for=\"uType\" class=\"col-sm-3 control-label\">Dates :</label><div class=\"col-sm-4\"><span>Du 28/03/2016 au 31/03/2017 de 10h à 16h</span></div></div><div class=\"form-group\"><label for=\"uType\" class=\"col-sm-3 control-label\">Qui :</label><div class=\"col-sm-4\"><span>Jacques Le corre (<i class=\"glyphicon ng-scope glyphicon-star\" i><i class=\"glyphicon ng-scope glyphicon-star\" i><i class=\"glyphicon ng-scope glyphicon-star\" i><i class=\"glyphicon ng-scope glyphicon-star\" i><i class=\"glyphicon ng-scope glyphicon-star-empty\" i>)</span></div></div><div class=\"form-group\"><label for=\"uType\" class=\"col-sm-3 control-label\">Prix :</label><div class=\"col-sm-4\"><span><b>72 €</b></span></div></div><div class=\"form-group myButton\" style=\"height:60px\"><div class=\"col-sm-3\"></div><div class=\"col-sm-4\"><button type=\"submit\" class=\"btn btn-success\">Valider</button></div></div></form></div><div ng-if=\"vm.validated\"><p class=\"text-center\" style=\"font-size:2em\">Echange entre \"Imen Necib\" et \"Jacques Le corre\" validé!</p><p class=\"text-center\"><button type=\"button\" class=\"btn btn-default\" ng-click=\"vm.goHome()\">Retour page acceuil</button></p></div><div ng-include=\"'breadcrumbValidate.html'\"></div></div><style type=\"text/css\">.myButton {\r" +
+    "\n" +
+    "    height: 40px;\r" +
+    "\n" +
+    "    position: absolute;\r" +
+    "\n" +
+    "    top: 192px;\r" +
+    "\n" +
+    "    right: 10px;\r" +
+    "\n" +
+    " }\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    " .myButton button {\r" +
+    "\n" +
+    "    width: 150px;\r" +
+    "\n" +
+    "    height: 40px;\r" +
+    "\n" +
+    "    border: 1px white solid;\r" +
+    "\n" +
+    "    font-size: 20px;\r" +
+    "\n" +
+    " }</style>"
   );
  return {}; }]);}());
