@@ -14,6 +14,7 @@ var oeup;
             $log.info("ResultController called");
             vm.objects = [{
                     img: "http://www.lettre-gratuite.fr/files/2013/03/place-parking.jpg",
+                    title:"Parking à la journée",
                     texte: "Place sur parking privé, idéal pour se garer au webcenter de Lille",
                     price: 10,
                     id: 1,
@@ -24,6 +25,7 @@ var oeup;
                 },
                 {
                     img: "http://img0.gtsstatic.com/faits-divers/mal-foutue-cette-place-de-parking_646_w620.jpg",
+                    title:"Parking à la journée",
                     texte: "Place idéalement placé à l'ombre d'un arbre",
                     price: 15,
                     id: 2,
