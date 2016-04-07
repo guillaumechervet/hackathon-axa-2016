@@ -7,7 +7,8 @@ var oeup;
         'ui.bootstrap',
         'ngFileUpload',
         'mw.validation',
-        'uiGmapgoogle-maps'
+        'uiGmapgoogle-maps',
+        'google.places'
     ]);
     app.config(["$routeProvider", "$locationProvider", '$httpProvider', 'uiGmapGoogleMapApiProvider', function ($routeProvider, $locationProvider, $httpProvider, uiGmapGoogleMapApiProvider) {
             $httpProvider.interceptors.push('HttpLoaderInterceptor');

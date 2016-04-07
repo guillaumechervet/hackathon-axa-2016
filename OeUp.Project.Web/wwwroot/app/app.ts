@@ -9,7 +9,8 @@ module oeup {
         'ui.bootstrap',
         'ngFileUpload',
         'mw.validation',
-        'uiGmapgoogle-maps'
+        'uiGmapgoogle-maps',
+        'google.places'
     ]);
 
     app.config(["$routeProvider", "$locationProvider", '$httpProvider','uiGmapGoogleMapApiProvider',($routeProvider, $locationProvider,$httpProvider,uiGmapGoogleMapApiProvider) => {
