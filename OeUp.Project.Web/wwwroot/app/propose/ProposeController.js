@@ -14,7 +14,7 @@ var oeup;
                 DateDebut: new Date(2016, 1, 1, 9, 30),
                 DateFin: new Date(2016, 1, 1, 18, 30),
                 Frequence: 'Chaque jour',
-                MainPhoto: 'http://localhost:5000/images/place-parking.jpg',
+                MainPhoto: '/images/place-parking.jpg',
                 Description: 'Ce parking est à louer pendant mes horaires de travail',
                 Id: 1
             });
@@ -26,7 +26,7 @@ var oeup;
                 DateDebut: new Date(2016, 1, 1, 9, 30),
                 DateFin: new Date(2016, 1, 1, 18, 30),
                 Frequence: 'Chaque jour',
-                MainPhoto: 'http://localhost:5000/images/wifi.jpg',
+                MainPhoto: '/images/wifi.jpg',
                 Description: 'Ce parking est à louer pendant mes horaires de travail',
                 Id: 2
             });
@@ -38,7 +38,7 @@ var oeup;
                 DateDebut: new Date(2016, 1, 1, 9),
                 DateFin: new Date(2016, 3, 1, 18),
                 Frequence: 'Chauque mois',
-                MainPhoto: 'http://localhost:5000/images/bureau.jpg',
+                MainPhoto: '/images/bureau.jpg',
                 Description: 'Partager une tasse de café avec un collègue vous tente bien. Vous voulez avoir le confort d\'un bureau spacieux et sans vous ruiner. Le coworking est la solution. Dans ce cadre, nous proposons le partage de nos bureaux situé au 420 rue de rouges barres, à Marcq en Baroeul',
                 Id: 250
             });
