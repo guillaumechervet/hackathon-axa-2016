@@ -7,14 +7,14 @@ var oeup;
             $log.info("ProposeController called");
             vm.Biens = [];
             vm.Biens.push({
-                Photos: ['http://localhost:5000/images/Hydrangeas.jpg', 'http://localhost:5000/images/Hydrangeas.jpg'],
+                Photos: ['http://www.lettre-gratuite.fr/files/2013/03/place-parking.jpg', 'http://img0.gtsstatic.com/faits-divers/mal-foutue-cette-place-de-parking_646_w620.jpg'],
                 Titre: 'Place de Parking',
                 EstLoue: true,
                 Tarif: 4,
                 DateDebut: new Date(2016, 1, 1, 9, 30),
                 DateFin: new Date(2016, 1, 1, 18, 30),
                 Frequence: 'Chaque jour',
-                MainPhoto: 'http://localhost:5000/images/Desert.jpg',
+                MainPhoto: 'http://localhost:5000/images/place-parking.jpg',
                 Description: 'Ce parking est à louer pendant mes horaires de travail',
                 Id: 1
             });
@@ -26,21 +26,21 @@ var oeup;
                 DateDebut: new Date(2016, 1, 1, 9, 30),
                 DateFin: new Date(2016, 1, 1, 18, 30),
                 Frequence: 'Chaque jour',
-                MainPhoto: 'http://localhost:5000/images/Hydrangeas.jpg',
+                MainPhoto: 'http://localhost:5000/images/wifi.jpg',
                 Description: 'Ce parking est à louer pendant mes horaires de travail',
                 Id: 2
             });
             vm.Biens.push({
                 Photos: ['', ''],
-                Titre: 'Parking',
+                Titre: 'Espace de travail',
                 EstLoue: true,
                 Tarif: 3,
-                DateDebut: new Date(2016, 1, 1, 9, 30),
-                DateFin: new Date(2016, 1, 1, 18, 30),
-                Frequence: 'Chaque jour',
-                MainPhoto: 'http://localhost:5000/images/Jellyfish.jpg',
-                Description: 'Ce parking est à louer pendant mes horaires de travail',
-                Id: 3
+                DateDebut: new Date(2016, 1, 1, 9),
+                DateFin: new Date(2016, 3, 1, 18),
+                Frequence: 'Chauque mois',
+                MainPhoto: 'http://localhost:5000/images/bureau.jpg',
+                Description: 'Partager une tasse de café avec un collègue vous tente bien. Vous voulez avoir le confort d\'un bureau spacieux et sans vous ruiner. Le coworking est la solution. Dans ce cadre, nous proposons le partage de nos bureaux situé au 420 rue de rouges barres, à Marcq en Baroeul',
+                Id: 250
             });
             vm.navAdd = function () {
                 $location.path('/proposer/ajouter');

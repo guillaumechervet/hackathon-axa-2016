@@ -1,4 +1,5 @@
 ﻿/// <reference path="../../../../bower_components/DefinitelyTyped/angularjs/angular.d.ts"/>
+/// <reference path="../../../../bower_components/DefinitelyTyped/toastr/toastr.d.ts"/>
 
 module oeup {
     'use strict';
@@ -10,7 +11,9 @@ module oeup {
     export class ValidateController {
         public Types : Array<string>;
         public Model : any;
+        public validated: boolean = false;  
         public submit: Function;
+        public goHome: Function;
 
         constructor($scope: any, $location: ng.ILocationService, $log: ng.ILogService) {
             var vm = this;
@@ -30,7 +33,12 @@ module oeup {
              vm.Model = {Price:0};
              
              vm.submit = function(){
-                  $location.path('/resultat');
+                  vm.validated = true;
+                  toastr.success("Transaction réalisée", "Transaction réalisé avec success");
+             };
+             
+              vm.goHome = function(){
+                  $location.path('/');
              };
         }
     }
