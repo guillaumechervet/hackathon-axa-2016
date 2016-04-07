@@ -72,7 +72,7 @@ module oeup {
                  
             });
             
-            vm.map =  {center: { latitude: 48.8965812, longitude: 2.2 }, zoom: 11, pointList: [], options: {streetViewControl: false}};        
+            vm.map =  {center: { latitude: 48.8965812, longitude: 2.2 }, zoom: 10, pointList: [], options: {streetViewControl: false}};        
             vm.map.markers2Events = {
     mouseover: function (marker, eventName, model, args) {
        vm.HighlightObject(model);
