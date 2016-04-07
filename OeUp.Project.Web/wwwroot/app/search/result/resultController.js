@@ -12,11 +12,23 @@ var oeup;
             };
             var vm = this;
             $log.info("ResultController called");
+            vm.Types = ["Parking à la journée",
+                "Wifi",
+                "CoHomeWorking",
+                "Machine à laver",
+                "Seche linge",
+                "Perceuse",
+                "Scie",
+                "Tournevis",
+                "Co-voiturage",
+                "Voiture"
+            ];
+            vm.Model = { Type: "Parking à la journée", Ou: "Paris" };
             vm.objects = [{
                     img: "http://www.lettre-gratuite.fr/files/2013/03/place-parking.jpg",
                     texte: "Place sur parking privé, idéal pour se garer au webcenter de Lille",
-                    icon: '/images/marker.png',
-                    price: 10,
+                    icon: '/images/72orange.png',
+                    price: 72,
                     id: 1,
                     position: {
                         latitude: 48.8965812, longitude: 2.318375999999944
@@ -26,8 +38,8 @@ var oeup;
                 {
                     img: "http://img0.gtsstatic.com/faits-divers/mal-foutue-cette-place-de-parking_646_w620.jpg",
                     texte: "Place idéalement placé à l'ombre d'un arbre",
-                    icon: '/images/marker.png',
-                    price: 15,
+                    icon: '/images/80orange.png',
+                    price: 80,
                     id: 2,
                     position: {
                         latitude: 48.8971468, longitude: 2.1845104
@@ -48,10 +60,10 @@ var oeup;
                         $location.url('/valider');
                     };
                     point.mouseover = function () {
-                        point.icon = '/images/marker-focus.png';
+                        point.icon = '/images/' + point.price + 'bleu.png';
                     };
                     point.mouseout = function () {
-                        point.icon = '/images/marker.png';
+                        point.icon = '/images/' + point.price + 'orange.png';
                     };
                     vm.map.pointList.push(point);
                 });
