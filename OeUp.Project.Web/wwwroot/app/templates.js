@@ -112,7 +112,27 @@
     "\n" +
     "    <li class=\"active\">Recherche</li>\r" +
     "\n" +
-    "    </ol></script><div style=\"row\"><div ng-include=\"'breadcrumbAddBien.html'\"></div><h1>Rechercher</h1><div><form name=\"form\" role=\"form\" class=\"form-horizontal\" autocomplete=\"off\" enctype=\"multipart/form-data\" novalidate mw-submit=\"vm.submit(form)\"><div class=\"col-sm-4 col-sm-offset-2\"><div class=\"row\"><div class=\"form-group\" mw-container=\"form.uType\"><label for=\"uType\" class=\"col-sm-2 control-label\">Quoi*:</label><div class=\"col-sm-8\"><input type=\"text\" name=\"uType\" ng-model=\"vm.Model.Type\" class=\"form-control\" uib-typeahead=\"type for type in vm.Types | filter:$viewValue | limitTo:8\" mw-validate=\"vm.Rules.Type\"> <span mw-error=\"form.uType\"></span></div></div></div></div><div class=\"col-sm-4\"><div class=\"row\"><div class=\"form-group\" mw-container=\"form.uOu\"><label class=\"col-sm-2 control-label\">Ou* :</label><div class=\"col-sm-8\"><input type=\"text\" name=\"uOu\" ng-model=\"vm.Model.Ou\" class=\"form-control\" mw-validate=\"vm.Rules.Ou\"> <span mw-error=\"form.uOu\"></span></div></div></div></div><div class=\"col-sm-2\"><button type=\"submit\" class=\"btn btn-success\">Rechercher</button></div><div class=\"col-sm-12\"><a href=\"#\" ng-if=\"!vm.plus\" ng-click=\"vm.plus=true\">Plus de critères</a> <a href=\"#\" ng-if=\"vm.plus\" ng-click=\"vm.plus=false\">Moins de critères</a></div></form></div><div class=\"clearfix\"></div><div ng-if=\"vm.plus\"><h2>Dates</h2><div class=\"col-sm-4 col-sm-offset-2\"><div class=\"row\"><div class=\"form-group\" mw-container=\"form.uType\"><label for=\"uType\" class=\"col-sm-2 control-label\">Début:</label><div class=\"col-sm-8\"><input type=\"text\" name=\"uType\" ng-model=\"vm.Model.Type\" class=\"form-control\" uib-typeahead=\"type for type in vm.Types | filter:$viewValue | limitTo:8\" mw-validate=\"vm.Rules.Type\"> <span mw-error=\"form.uType\"></span></div></div></div></div><div class=\"col-sm-4\"><div class=\"row\"><div class=\"form-group\" mw-container=\"form.uOu\"><label class=\"col-sm-2 control-label\">Fin :</label><div class=\"col-sm-8\"><input type=\"text\" name=\"uOu\" ng-model=\"vm.Model.Ou\" class=\"form-control\" mw-validate=\"vm.Rules.Ou\"> <span mw-error=\"form.uOu\"></span></div></div></div></div><div class=\"clearfix\"></div><div class=\"clearfix\"></div><h2>Prix maximum</h2><div class=\"col-sm-8 col-sm-offset-2\"><input type=\"range\" min=\"1\" max=\"30\" step=\"1\" ng-model=\"vm.Model.Price\"><p class=\"text-center\" style=\"font-size:2em\" ng-bind=\"vm.Model.Price + ' €'\"></p></div><div class=\"clearfix\"></div><div class=\"form-group\" style=\"height:60px\"><div class=\"col-sm-3\"></div><div class=\"col-sm-4\"><button type=\"submit\" class=\"btn btn-success\">Rechercher</button></div></div></div><div ng-include=\"'breadcrumbAddBien.html'\"></div></div>"
+    "    </ol></script><div style=\"row\"><div ng-include=\"'breadcrumbAddBien.html'\"></div><h1>Rechercher</h1><div><form name=\"form\" role=\"form\" class=\"form-horizontal\" autocomplete=\"off\" enctype=\"multipart/form-data\" novalidate mw-submit=\"vm.submit(form)\"><div class=\"col-sm-4 col-sm-offset-2\"><div class=\"row\"><div class=\"form-group\" mw-container=\"form.uType\"><label for=\"uType\" class=\"col-sm-2 control-label\">Quoi*:</label><div class=\"col-sm-8\"><input type=\"text\" name=\"uType\" ng-model=\"vm.Model.Type\" class=\"form-control\" uib-typeahead=\"type for type in vm.Types | filter:$viewValue | limitTo:8\" mw-validate=\"vm.Rules.Type\"> <span mw-error=\"form.uType\"></span></div></div></div></div><div class=\"col-sm-4\"><div class=\"row\"><div class=\"form-group\" mw-container=\"form.uOu\"><label class=\"col-sm-2 control-label\">Ou* :</label><div class=\"col-sm-8\"><input type=\"text\" name=\"uOu\" ng-model=\"vm.Model.Ou\" class=\"form-control\" mw-validate=\"vm.Rules.Ou\"> <span mw-error=\"form.uOu\"></span></div></div></div></div><div class=\"col-sm-2\"><button type=\"submit\" class=\"btn-perso\"><img src=\"images/jeRecherche.png\" width=\"100%;\"></button></div><div class=\"col-sm-12\"><a href=\"#\" ng-if=\"!vm.plus\" ng-click=\"vm.plus=true\">Plus de critères</a> <a href=\"#\" ng-if=\"vm.plus\" ng-click=\"vm.plus=false\">Moins de critères</a></div></form></div><div class=\"clearfix\"></div><div ng-if=\"vm.plus\"><h2>Dates</h2><div class=\"col-sm-4 col-sm-offset-2\"><div class=\"row\"><div class=\"form-group\" mw-container=\"form.uType\"><label for=\"uType\" class=\"col-sm-2 control-label\">Début:</label><div class=\"col-sm-8\"><input type=\"text\" name=\"uType\" ng-model=\"vm.Model.Type\" class=\"form-control\" uib-typeahead=\"type for type in vm.Types | filter:$viewValue | limitTo:8\" mw-validate=\"vm.Rules.Type\"> <span mw-error=\"form.uType\"></span></div></div></div></div><div class=\"col-sm-4\"><div class=\"row\"><div class=\"form-group\" mw-container=\"form.uOu\"><label class=\"col-sm-2 control-label\">Fin :</label><div class=\"col-sm-8\"><input type=\"text\" name=\"uOu\" ng-model=\"vm.Model.Ou\" class=\"form-control\" mw-validate=\"vm.Rules.Ou\"> <span mw-error=\"form.uOu\"></span></div></div></div></div><div class=\"clearfix\"></div><div class=\"clearfix\"></div><h2>Prix maximum</h2><div class=\"col-sm-8 col-sm-offset-2\"><input type=\"range\" min=\"1\" max=\"30\" step=\"1\" ng-model=\"vm.Model.Price\"><p class=\"text-center\" style=\"font-size:2em\" ng-bind=\"vm.Model.Price + ' €'\"></p></div><div class=\"clearfix\"></div><div class=\"form-group\" style=\"height:60px\"><div class=\"col-sm-3\"></div><div class=\"col-sm-4\"><button type=\"submit\" class=\"btn-perso\"><img src=\"images/jeRecherche.png\" width=\"100%;\"></button></div></div></div><div ng-include=\"'breadcrumbAddBien.html'\"></div></div><style type=\"text/css\">.btn-perso {\r" +
+    "\n" +
+    "        background-color: transparent;\r" +
+    "\n" +
+    "        border: none;\r" +
+    "\n" +
+    "        width: 200px;\r" +
+    "\n" +
+    "        float: right;\r" +
+    "\n" +
+    "        margin-bottom: 15px;\r" +
+    "\n" +
+    "        margin-right: -20px;\r" +
+    "\n" +
+    "    }\r" +
+    "\n" +
+    "    .btn-perso img{\r" +
+    "\n" +
+    "        width: 100%;\r" +
+    "\n" +
+    "    }</style>"
   );
 
 
@@ -125,7 +145,23 @@
     "\n" +
     "    <li class=\"active\">Ajout bien</li>\r" +
     "\n" +
-    "    </ol></script><div class=\"row\"><div ng-include=\"'breadcrumbResult.html'\"></div><h1>Resultats de la recherche</h1><div class=\"row\"><div class=\"col-xs-6 col-md-4\" style=\"width:45%; padding-right: 0\"><!-- recherche --><div class=\"row\"><div class=\"form-group\" mw-container=\"form.uType\"><label for=\"uType\" class=\"col-sm-2 control-label\">Quoi*:</label><div class=\"col-sm-8\"><input type=\"text\" name=\"uType\" ng-model=\"vm.Model.Type\" class=\"form-control\" uib-typeahead=\"type for type in vm.Types | filter:$viewValue | limitTo:8\" mw-validate=\"vm.Rules.Type\"> <span mw-error=\"form.uType\"></span></div></div></div><div class=\"row\"><div class=\"form-group\" mw-container=\"form.uOu\"><label class=\"col-sm-2 control-label\">Ou* :</label><div class=\"col-sm-8\"><input type=\"text\" name=\"uOu\" ng-model=\"vm.Model.Ou\" class=\"form-control\" mw-validate=\"vm.Rules.Ou\"> <span mw-error=\"form.uOu\"></span></div></div></div><!-- recherche --><a href=\"#\" ng-if=\"!vm.plus\" ng-click=\"vm.plus=true\">Plus de critères</a><div ng-repeat-start=\"object in vm.objects\" ng-class=\"object.class\" class=\"resultItem\" ng-mouseover=\"object.mouseover()\" ng-mouseout=\"object.mouseout()\" ng-click=\"object.click()\"><span class=\"image\"><img ng-src=\"{{object.img}}\"><div class=\"price\">{{object.price}} €</div></span> <span class=\"desc\"><div class=\"title\">{{object.title}}</div><div class=\"text\">{{object.texte}}</div></span></div><div style=\"clear:both\" ng-repeat-end></div></div><div class=\"col-xs-12 col-md-8\" style=\"width:55%; overflow: hidden; height: 280px\"><div ui-gmap-google-map id=\"map-regie\" center=\"vm.map.center\" zoom=\"vm.map.zoom\"><ui-gmap-markers models=\"vm.map.pointList\" coords=\"'position'\" idkey=\"'id'\" click=\"click\" events=\"vm.map.markers2Events\" icon=\"'icon'\"></ui-gmap-markers></div></div></div><div ng-include=\"'breadcrumbResult.html'\"></div></div><style>.resultItem {\r" +
+    "    </ol></script><div class=\"row\"><div ng-include=\"'breadcrumbResult.html'\"></div><h1>Resultats de la recherche</h1><div class=\"resultDiv\"><div class=\"\" style=\"padding-right: 0\"><!-- recherche --><div class=\"\"><div class=\"form-group\" mw-container=\"form.uType\"><label for=\"uType\" class=\"control-label\">Quoi*:</label><div class=\"\"><input type=\"text\" name=\"uType\" ng-model=\"vm.Model.Type\" class=\"form-control\" uib-typeahead=\"type for type in vm.Types | filter:$viewValue | limitTo:8\" mw-validate=\"vm.Rules.Type\"></div></div></div><div class=\"\"><div class=\"form-group\" mw-container=\"form.uOu\"><label class=\"control-label\">Ou* :</label><div class=\"\"><input type=\"text\" name=\"uOu\" ng-model=\"vm.Model.Ou\" class=\"form-control\" mw-validate=\"vm.Rules.Ou\"></div></div></div><a href=\"#\" ng-if=\"!vm.plus\" ng-click=\"vm.plus=true\" class=\"moreCriteria\">Plus de critères</a><div class=\"\" style=\"overflow: hidden; height: 280px\"><div ui-gmap-google-map id=\"map-regie\" center=\"vm.map.center\" zoom=\"vm.map.zoom\"><ui-gmap-markers models=\"vm.map.pointList\" coords=\"'position'\" idkey=\"'id'\" click=\"click\" events=\"vm.map.markers2Events\" icon=\"'icon'\"></ui-gmap-markers></div></div></div><!-- recherche --><div ng-repeat-start=\"object in vm.objects\" ng-class=\"object.class\" class=\"resultItem\" ng-mouseover=\"object.mouseover()\" ng-mouseout=\"object.mouseout()\" ng-click=\"object.click()\"><span class=\"image\"><img ng-src=\"{{object.img}}\"><div class=\"price\">{{object.price}} €</div></span> <span class=\"desc\"><div class=\"title\">{{object.title}}</div><div class=\"text\">{{object.texte}}</div></span></div><div style=\"clear:both\" ng-repeat-end></div></div><div ng-include=\"'breadcrumbResult.html'\"></div></div><style>.resultDiv {\r" +
+    "\n" +
+    "    padding: 0 10px;\r" +
+    "\n" +
+    "}\r" +
+    "\n" +
+    ".resultDiv .moreCriteria {\r" +
+    "\n" +
+    "    display: inline-block;\r" +
+    "\n" +
+    "    margin-bottom: 5px;\r" +
+    "\n" +
+    "    margin-top: -10px;\r" +
+    "\n" +
+    "}\r" +
+    "\n" +
+    ".resultItem {\r" +
     "\n" +
     "    float: right;\r" +
     "\n" +

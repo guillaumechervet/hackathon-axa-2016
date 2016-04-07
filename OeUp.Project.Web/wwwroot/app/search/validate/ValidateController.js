@@ -23,7 +23,7 @@ var oeup;
                 toastr.success("Transaction réalisée", "Transaction réalisé avec success");
             };
             vm.goHome = function () {
-                $location.path('');
+                $location.path('/');
             };
         }
         return ValidateController;
