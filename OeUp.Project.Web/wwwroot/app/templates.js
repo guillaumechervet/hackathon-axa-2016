@@ -12,7 +12,7 @@
 
 
   $templateCache.put('/wwwroot/app/home/index.html',
-    "<div class=\"row\"><iframe id=\"ytplayer\" type=\"text/html\" width=\"640\" height=\"390\" src=\"http://www.youtube.com/embed/M7lc1UVf-VE?autoplay=0&amp;origin=http://example.com\" frameborder=\"0\" style=\"padding: 10px;width: 100%\"></iframe><div class=\"col-md-6\" style=\"width:50%; float: left; padding-right:0\"><a href=\"/rechercher\" class=\"jeRecherche\"><img src=\"images/jeRecherche.png\"></a></div><div class=\"col-md-6\" style=\"width:50%; float: right; padding-right:0\"><a href=\"/proposer\" class=\"jePropose\"><img src=\"images/jePropose.png\"></a></div></div><style type=\"text/css\">.jeRecherche {\r" +
+    "<div class=\"row\"><iframe id=\"ytplayer\" type=\"text/html\" width=\"640\" height=\"320\" src=\"http://www.youtube.com/embed/M7lc1UVf-VE?autoplay=0&amp;origin=http://example.com\" frameborder=\"0\" style=\"padding: 10px;width: 100%\"></iframe><div class=\"col-md-6\" style=\"width:50%; float: left; padding-right:0\"><a href=\"/rechercher\" class=\"jeRecherche\"><img src=\"images/jeRecherche.png\"></a></div><div class=\"col-md-6\" style=\"width:50%; float: right; padding-right:0; padding-right: 10px; padding-left: 5px\"><a href=\"/proposer\" class=\"jePropose\"><img src=\"images/jePropose.png\"></a></div></div><style type=\"text/css\">.jeRecherche {\r" +
     "\n" +
     "        width: 100%;\r" +
     "\n" +
@@ -101,7 +101,33 @@
     "\n" +
     "    <li class=\"active\">Proposer</li>\r" +
     "\n" +
-    "    </ol></script><div ng-include=\"'breadcrumbProposer.html'\"></div><h1>Proposer vos biens</h1><div style=\"height:40px\"><button type=\"button\" class=\"btn btn-default pull-right\" ng-click=\"vm.navAdd()\">Ajouter un bien</button></div><div ng-if=\"vm.Biens.length >0\"><h2>Liste des biens</h2><div class=\"row\"><div class=\"col-sm-6 col-md-4\" ng-repeat=\"bien in vm.Biens\"><div class=\"thumbnail\"><img ng-src=\"{{bien.MainPhoto}}\"><div class=\"caption\"><h3>{{bien.Titre}}</h3><p><span>Loué du {{bien.DateDebut | date:'dd/MM/yyyy' }} au {{bien.DateFin | date:'dd/MM/yyyy' }} : {{bien.Frequence}} de {{bien.DateDebut | date:'HH:mm' }} au {{bien.DateFin | date:'HH:mm' }}</span> {{bien.Description}}</p><p><button ng-click=\"vm.remove(bien)\" type=\"button\" class=\"btn btn-danger\" uib-popover=\"Supprimer\" popover-trigger=\"mouseenter\"><span class=\"glyphicon glyphicon-remove\"></button> <button ng-click=\"vm.edit(bien)\" type=\"button\" class=\"btn btn-edit\" uib-popover=\"Editer\" popover-trigger=\"mouseenter\"><span class=\"glyphicon glyphicon-edit\"></button></p></div></div></div></div></div><div ng-if=\"vm.Biens.length <=0\" class=\"oeup-empty\"><p>Aucun bien déclaré.</p></div><div style=\"height:40px\"><button type=\"button\" class=\"btn btn-default pull-right\" ng-click=\"vm.navAdd()\">Ajouter un bien</button></div><div ng-include=\"'breadcrumbProposer.html'\"></div>"
+    "    </ol></script><div ng-include=\"'breadcrumbProposer.html'\"></div><h1>Proposer un bien</h1><div style=\"height:40px\"><button type=\"button\" class=\"btn-perso\" ng-click=\"vm.navAdd()\"><img src=\"images/Ajouterbien60.png\"></button></div><div ng-if=\"vm.Biens.length >0\"><h2>Mes biens</h2><div class=\"row\"><div class=\"col-sm-6 col-md-4\" ng-repeat=\"bien in vm.Biens\"><div class=\"thumbnail\"><img ng-src=\"{{bien.MainPhoto}}\"><div class=\"caption\"><h3>{{bien.Titre}}</h3><p><span>Loué du {{bien.DateDebut | date:'dd/MM/yyyy' }} au {{bien.DateFin | date:'dd/MM/yyyy' }} : {{bien.Frequence}} de {{bien.DateDebut | date:'HH:mm' }} au {{bien.DateFin | date:'HH:mm' }}</span> {{bien.Description}}</p><p><button ng-click=\"vm.remove(bien)\" type=\"button\" class=\"btn btn-danger\" uib-popover=\"Supprimer\" popover-trigger=\"mouseenter\"><span class=\"glyphicon glyphicon-remove\"></button> <button ng-click=\"vm.edit(bien)\" type=\"button\" class=\"btn btn-edit\" uib-popover=\"Editer\" popover-trigger=\"mouseenter\"><span class=\"glyphicon glyphicon-edit\"></button></p></div></div></div></div></div><div ng-if=\"vm.Biens.length <=0\" class=\"oeup-empty\"><p>Aucun bien déclaré.</p></div><div style=\"height:40px\"><button type=\"button\" class=\"btn-perso btn-last\" ng-click=\"vm.navAdd()\"><img src=\"images/Ajouterbien60.png\"></button></div><div ng-include=\"'breadcrumbProposer.html'\"></div><style type=\"text/css\">.btn-perso {\r" +
+    "\n" +
+    "        background-color: transparent;\r" +
+    "\n" +
+    "        border: none;\r" +
+    "\n" +
+    "        width: 200px;\r" +
+    "\n" +
+    "        float: right;\r" +
+    "\n" +
+    "        margin-bottom: 15px;\r" +
+    "\n" +
+    "    }\r" +
+    "\n" +
+    "    .btn-perso img{\r" +
+    "\n" +
+    "        width: 100%;\r" +
+    "\n" +
+    "    }\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "    .btn-perso.btn-last {\r" +
+    "\n" +
+    "        margin-top: -10px;\r" +
+    "\n" +
+    "    }</style>"
   );
 
 
@@ -145,7 +171,7 @@
     "\n" +
     "    <li class=\"active\">Ma recherche</li>\r" +
     "\n" +
-    "    </ol></script><div class=\"row\"><div ng-include=\"'breadcrumbResult.html'\"></div><h1>Ma recherche</h1><div class=\"resultDiv\"><div class=\"\" style=\"padding-right: 0\"><!-- recherche --><div class=\"quoi\"><div class=\"form-group\" mw-container=\"form.uType\"><label for=\"uType\" class=\"control-label\">Quoi*:</label><div class=\"\"><input type=\"text\" name=\"uType\" ng-model=\"vm.Model.Type\" class=\"form-control\" uib-typeahead=\"type for type in vm.Types | filter:$viewValue | limitTo:8\" mw-validate=\"vm.Rules.Type\"></div></div></div><div class=\"\"><div class=\"form-group\" mw-container=\"form.uOu\"><label class=\"control-label\">Ou* :</label><div class=\"\"><input type=\"text\" name=\"uOu\" ng-model=\"vm.Model.Ou\" class=\"form-control\" mw-validate=\"vm.Rules.Ou\" g-places-autocomplete></div></div></div><a href=\"#\" ng-if=\"!vm.plus\" ng-click=\"vm.plus=true\" class=\"moreCriteria\">Plus de critères</a><div class=\"\" style=\"overflow: hidden; height: 280px\"><div ui-gmap-google-map id=\"map-regie\" center=\"vm.map.center\" zoom=\"vm.map.zoom\"><ui-gmap-markers models=\"vm.map.pointList\" coords=\"'position'\" idkey=\"'id'\" click=\"click\" events=\"vm.map.markers2Events\" icon=\"'icon'\"></ui-gmap-markers></div></div></div><!-- recherche --><div ng-repeat-start=\"object in vm.objects\" ng-class=\"object.class\" class=\"resultItem\" ng-mouseover=\"object.mouseover()\" ng-mouseout=\"object.mouseout()\" ng-click=\"object.click()\"><span class=\"image\"><img ng-src=\"{{object.img}}\"><div class=\"price\">{{object.price}} €</div></span> <span class=\"desc\"><div class=\"title\">{{object.title}}</div><div class=\"text\">{{object.texte}}</div><div class=\"dispo\">{{object.dispo}}</div></span></div><div style=\"clear:both\" ng-repeat-end></div></div><div ng-include=\"'breadcrumbResult.html'\"></div></div><style>.resultDiv {\r" +
+    "    </ol></script><div class=\"row\"><div ng-include=\"'breadcrumbResult.html'\"></div><h1 style=\"padding-left: 8px\">Ma recherche</h1><div class=\"resultDiv\"><div class=\"\" style=\"padding-right: 0\"><!-- recherche --><div class=\"quoi\"><div class=\"form-group\" mw-container=\"form.uType\"><label for=\"uType\" class=\"control-label\">Quoi*:</label><div class=\"\"><input type=\"text\" name=\"uType\" ng-model=\"vm.Model.Type\" class=\"form-control\" uib-typeahead=\"type for type in vm.Types | filter:$viewValue | limitTo:8\" mw-validate=\"vm.Rules.Type\"></div></div></div><div class=\"\"><div class=\"form-group\" mw-container=\"form.uOu\"><label class=\"control-label\">Ou* :</label><div class=\"\"><input type=\"text\" name=\"uOu\" ng-model=\"vm.Model.Ou\" class=\"form-control\" mw-validate=\"vm.Rules.Ou\" g-places-autocomplete></div></div></div><a href=\"#\" ng-if=\"!vm.plus\" ng-click=\"vm.plus=true\" class=\"moreCriteria\">Plus de critères</a><div class=\"\" style=\"overflow: hidden; height: 280px\"><div ui-gmap-google-map id=\"map-regie\" center=\"vm.map.center\" zoom=\"vm.map.zoom\"><ui-gmap-markers models=\"vm.map.pointList\" coords=\"'position'\" idkey=\"'id'\" click=\"click\" events=\"vm.map.markers2Events\" icon=\"'icon'\"></ui-gmap-markers></div></div></div><!-- recherche --><div ng-repeat-start=\"object in vm.objects\" ng-class=\"object.class\" class=\"resultItem\" ng-mouseover=\"object.mouseover()\" ng-mouseout=\"object.mouseout()\" ng-click=\"object.click()\"><span class=\"image\"><img ng-src=\"{{object.img}}\"> <img class=\"user\" ng-src=\"{{object.user}}\"><div class=\"price\">{{object.price}} €</div></span> <span class=\"desc\"><div class=\"title\">{{object.title}}</div><div class=\"text\">{{object.texte}}</div><div class=\"dispo\">{{object.dispo}}</div></span></div><div style=\"clear:both\" ng-repeat-end></div></div><div ng-include=\"'breadcrumbResult.html'\"></div></div><style>.resultDiv {\r" +
     "\n" +
     "    padding: 0 10px;\r" +
     "\n" +
@@ -224,6 +250,20 @@
     "    font-size: 25px;\r" +
     "\n" +
     "    color: #e7711b;\r" +
+    "\n" +
+    "}\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    ".user {\r" +
+    "\n" +
+    "    position: absolute;\r" +
+    "\n" +
+    "    width: 60px;\r" +
+    "\n" +
+    "    left: 105px;\r" +
+    "\n" +
+    "    bottom: 93px;\r" +
     "\n" +
     "}</style>"
   );

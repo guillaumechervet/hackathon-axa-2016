@@ -7,7 +7,7 @@
 </script>
 <div class="row">
 <div ng-include="'breadcrumbResult.html'"></div>   
-<h1>Ma recherche</h1>
+<h1 style="padding-left: 8px;">Ma recherche</h1>
    
 
 <div class="resultDiv">
@@ -44,6 +44,7 @@
         <div ng-repeat-start="object in vm.objects" ng-class="object.class" class="resultItem" ng-mouseover="object.mouseover()" ng-mouseout="object.mouseout()" ng-click="object.click()">
             <span class="image">
                 <img ng-src="{{object.img}}"/>
+                <img class="user" ng-src="{{object.user}}"/>
                 <div class="price">{{object.price}} €</div>
             </span>
             <span class="desc">
@@ -100,6 +101,13 @@
 .resultItem .price {
     font-size: 25px;
     color: #e7711b;
+}
+
+.user {
+    position: absolute;
+    width: 60px;
+    left: 105px;
+    bottom: 93px;
 }
 
 </style>
