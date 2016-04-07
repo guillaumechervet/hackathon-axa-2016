@@ -4,12 +4,6 @@ var oeup;
     var ResultController = (function () {
         function ResultController($scope, $location, $log, uiGmapGoogleMapApi) {
             'ngInject';
-            this.HighlightObject = function (point) {
-                point.class = "black";
-            };
-            this.UnHighlightObject = function (point) {
-                point.class = "white";
-            };
             var vm = this;
             $log.info("ResultController called");
             vm.objects = [{
@@ -59,6 +53,12 @@ var oeup;
                 mouseout: function (marker, eventName, model, args) {
                     vm.UnHighlightObject(model);
                 }
+            };
+            vm.HighlightObject = function (point) {
+                point.class = "black";
+            };
+            vm.UnHighlightObject = function (point) {
+                point.class = "white";
             };
         }
         return ResultController;

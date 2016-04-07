@@ -10,6 +10,8 @@ module oeup {
     export class ResultController {
           public map:any;
           public objects:any;
+          public HighlightObject : Function;
+          public UnHighlightObject : Function;
 
         constructor($scope: any, $location: ng.ILocationService, $log: ng.ILogService,uiGmapGoogleMapApi:any) {
             'ngInject';
@@ -68,25 +70,21 @@ module oeup {
             
             vm.map =  {center: { latitude: 48.8965812, longitude: 2.318375999999944 }, zoom: 13, pointList: [], options: {streetViewControl: false}};        
             vm.map.markers2Events = {
-    mouseover: function (marker, eventName, model, args) {
-       vm.HighlightObject(model);
-    },
-    mouseout: function (marker, eventName, model, args) {
-       vm.UnHighlightObject(model);
-    }
-  };    
-        }
-        
-        vm.HighlightObject = function(point:any){
-             
-            point.class="black";
-        } 
-        
-        vm.UnHighlightObject = function(point:any){
-             
-            point.class="white";
-        } 
-        
+                mouseover: function (marker, eventName, model, args) {
+                vm.HighlightObject(model);
+                },
+                mouseout: function (marker, eventName, model, args) {
+                vm.UnHighlightObject(model);
+                }
+            };
+            vm.HighlightObject = function(point:any){                
+                point.class="black";
+            };
+            
+            vm.UnHighlightObject = function(point:any){                
+                point.class="white";
+            };  
+        }     
     }
 
     var app = angular.module('myapp');
