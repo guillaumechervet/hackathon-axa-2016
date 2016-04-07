@@ -13,31 +13,29 @@
     <button type="button" class="btn btn-default pull-right" ng-click="vm.navAdd()">Ajouter un bien</button>
 </div>
 <div ng-if="vm.Biens.length >0">
-
-<h2>Liste des biens</h2>
-<div class="row">
-  <div class="col-sm-6 col-md-4" ng-repeat="bien in vm.Biens">
-    <div class="thumbnail">
-      <img ng-src="{{bien.MainPhoto}}">
-      <div class="caption">
-        <h3>{{bien.Titre}}</h3>
-        <p>
-            <span>Loué du {{bien.DateDebut | date:'dd/MM/yyyy' }} au {{bien.DateFin | date:'dd/MM/yyyy' }} : {{bien.Frequence}} de {{bien.DateDebut | date:'HH:mm' }} au {{bien.DateFin | date:'HH:mm' }}</span>
-            {{bien.Description}}</p>
-        <p>
-            <button ng-click="vm.remove(bien)" type="button" class="btn btn-danger" uib-popover="Supprimer" popover-trigger="mouseenter">
+    <h2>Liste des biens</h2>
+    <div class="row">
+    <div class="col-sm-6 col-md-4" ng-repeat="bien in vm.Biens">
+        <div class="thumbnail">
+        <img ng-src="{{bien.MainPhoto}}">
+        <div class="caption">
+            <h3>{{bien.Titre}}</h3>
+            <p>
+                <span>Loué du {{bien.DateDebut | date:'dd/MM/yyyy' }} au {{bien.DateFin | date:'dd/MM/yyyy' }} : {{bien.Frequence}} de {{bien.DateDebut | date:'HH:mm' }} au {{bien.DateFin | date:'HH:mm' }}</span>
+                {{bien.Description}}
+            </p>
+            <p>
+                <button ng-click="vm.remove(bien)" type="button" class="btn btn-danger" uib-popover="Supprimer" popover-trigger="mouseenter">
                     <span class="glyphicon glyphicon-remove" />
                 </button>
                 <button ng-click="vm.edit(bien)" type="button" class="btn btn-edit" uib-popover="Editer" popover-trigger="mouseenter">
                     <span class="glyphicon glyphicon-edit" />
                 </button>
-        </p>
-      </div>
+            </p>
+        </div>
+        </div>
     </div>
-  </div>
-</div>
-<button type="button" class="btn btn-default pull-right" ng-bind="vm.navAdd()">Ajouter un bien</button>
-
+    </div>
 </div>
 
 <div ng-if="vm.Biens.length <=0" class="oeup-empty">
@@ -47,8 +45,4 @@
 <div style="height:40px;">
     <button type="button" class="btn btn-default pull-right" ng-click="vm.navAdd()">Ajouter un bien</button>
 </div>
-</div>
-
-
-
 <div ng-include="'breadcrumbProposer.html'"></div>

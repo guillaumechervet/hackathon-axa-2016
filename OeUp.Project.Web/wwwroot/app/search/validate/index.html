@@ -12,6 +12,8 @@
 <div style="row">
 <div ng-include="'breadcrumbValidate.html'"></div>   
 
+
+<div ng-if="!vm.validated">
 <h1>Valider</h1>
 
 
@@ -66,8 +68,13 @@
                             </div>
                         </div>
  </form>
-
+ </div>
+ 
+ <div ng-if="vm.validated">
+     <p class="text-center" style="font-size:2em;">Echange entre "Imen Necib"" et "Jacques Le corre"" validé!</p>
+       <p class="text-center" ><button type="button" class="btn btn-default" ng-click="vm.goHome()">Retour page acceuil</button></p>
+     </div>
 
 <div ng-include="'breadcrumbValidate.html'"></div>
 
-   </div>
+ </div>

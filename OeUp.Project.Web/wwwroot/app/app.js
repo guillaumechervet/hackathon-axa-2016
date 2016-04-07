@@ -42,7 +42,7 @@ var oeup;
                 .when('/proposer', {
                 templateUrl: '/app/propose/index.html',
                 controller: 'ProposeController',
-                controllerAs: 'vm',
+                controllerAs: 'vm'
             })
                 .when('/proposer/ajouter', {
                 templateUrl: '/app/propose/addBien.html',

@@ -11,13 +11,15 @@ module oeup {
     export class ProposeController {
          public Biens : Array<IBien>;
          public navAdd : Function;
+         public edit : Function;
+         public remove : Function;
           
         constructor($scope: any, $location: ng.ILocationService, $log: ng.ILogService) {
             var vm = this;
             $log.info("ProposeController called");
             vm.Biens = [];
             vm.Biens.push({
-                Photos: ["http://localhost:5000/images/Hydrangeas.jpg","http://localhost:5000/images/Hydrangeas.jpg"],
+                Photos: ['http://localhost:5000/images/Hydrangeas.jpg','http://localhost:5000/images/Hydrangeas.jpg'],
                 Titre: 'Place de Parking',
                 EstLoue: true,
                 Tarif: 4,
@@ -25,10 +27,11 @@ module oeup {
                 DateFin : new Date(2016,1,1,18,30),
                 Frequence : 'Chaque jour',
                 MainPhoto : 'http://localhost:5000/images/Desert.jpg',
-                Description: 'Ce parking est à louer pendant mes horaires de travail' 
+                Description: 'Ce parking est à louer pendant mes horaires de travail',
+                Id : 1
             });
             vm.Biens.push({
-                Photos: ["",""],
+                Photos: ['',''],
                 Titre: 'Connexion wifi',
                 EstLoue: true,
                 Tarif: 5,
@@ -36,10 +39,11 @@ module oeup {
                 DateFin : new Date(2016,1,1,18,30),
                 Frequence : 'Chaque jour',
                 MainPhoto : 'http://localhost:5000/images/Hydrangeas.jpg',
-                Description: 'Ce parking est à louer pendant mes horaires de travail' 
+                Description: 'Ce parking est à louer pendant mes horaires de travail',
+                Id : 2
             });
             vm.Biens.push({
-                Photos: ["",""],
+                Photos: ['',''],
                 Titre: 'Parking',
                 EstLoue: true,
                 Tarif: 3,
@@ -47,14 +51,28 @@ module oeup {
                 DateFin : new Date(2016,1,1,18,30),
                 Frequence : 'Chaque jour',
                 MainPhoto : 'http://localhost:5000/images/Jellyfish.jpg',
-                Description: 'Ce parking est à louer pendant mes horaires de travail' 
+                Description: 'Ce parking est à louer pendant mes horaires de travail',
+                Id : 3 
             });
             
             
             vm.navAdd = function(){
                 $location.path('/proposer/ajouter');
-            }
-        }
+            };
+            
+            vm.edit = function(bienId){
+                
+                $location.path('/proposer/ajouter');
+            };
+            
+            vm.remove = function(bienId){
+                var index = vm.Biens.indexOf(bienId, 0);
+                if (index > -1) {
+                    vm.Biens.splice(index, 1);
+                }
+                $location.path('/proposer');
+            };
+        };
     }
 
     var app = angular.module('myapp');

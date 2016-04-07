@@ -3,6 +3,7 @@ var oeup;
     'use strict';
     var ValidateController = (function () {
         function ValidateController($scope, $location, $log) {
+            this.validated = false;
             var vm = this;
             $log.info("ValidateController called");
             vm.Types = ["Parking à la journée",
@@ -18,7 +19,11 @@ var oeup;
             ];
             vm.Model = { Price: 0 };
             vm.submit = function () {
-                $location.path('/resultat');
+                vm.validated = true;
+                toastr.success("Transaction réalisée", "Transaction réalisé avec success");
+            };
+            vm.goHome = function () {
+                $location.path('');
             };
         }
         return ValidateController;
