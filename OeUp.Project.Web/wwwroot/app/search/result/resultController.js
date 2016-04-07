@@ -19,7 +19,7 @@ var oeup;
             ];
             vm.Model = { Type: "Parking à la journée", Ou: "Paris, France" };
             vm.objects = [{
-                    img: "http://www.lettre-gratuite.fr/files/2013/03/place-parking.jpg",
+                    img: "images/place-parking.jpg",
                     texte: "Place sur parking privé, idéal pour se garer au webcenter de Lille.",
                     dispo: "Disponible du 28/03/2016 au 31/03/2017 de 10h à 16h.",
                     icon: '/images/72orange.png',
@@ -31,7 +31,7 @@ var oeup;
                     class: "white"
                 },
                 {
-                    img: "http://img0.gtsstatic.com/faits-divers/mal-foutue-cette-place-de-parking_646_w620.jpg",
+                    img: "images/mal-foutue-cette-place-de-parking_646_w620.jpg",
                     texte: "Place à l'ombre d'un arbre.",
                     dispo: "Disponible du 28/03/2016 au 29/04/2016 de 10h à 11h.",
                     icon: '/images/80orange.png',

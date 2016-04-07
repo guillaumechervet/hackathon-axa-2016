@@ -19,24 +19,33 @@
 
 
 <form name="form" role="form" class="form-horizontal"  autocomplete="off" enctype="multipart/form-data" novalidate mw-submit="vm.submit(form)">
-
+<div class="form-group" >
+                        <img src="images/place-parking2.jpg" />
+</div>
 
 <div class="form-group">
-                        <label for="uType" class="col-sm-3 control-label">Quoi*:</label>
+                        <label for="uType" class="col-sm-3 control-label">Quoi :</label>
                         <div class="col-sm-4">
                             <span>Place de parking</span>
                         </div>
 </div>
 
 <div class="form-group">
-                        <label for="uType" class="col-sm-3 control-label">Dates*:</label>
+                        <label for="uType" class="col-sm-3 control-label">Description :</label>
                         <div class="col-sm-4">
-                            <span>07/04/2016 au 08/04/2016 de 9h à 18h</span>
+                            <span>Place sur parking privé, idéal pour se garer au webcenter de Lille.</span>
                         </div>
 </div>
 
 <div class="form-group">
-                        <label for="uType" class="col-sm-3 control-label">Qui*:</label>
+                        <label for="uType" class="col-sm-3 control-label">Dates :</label>
+                        <div class="col-sm-4">
+                            <span>Du 28/03/2016 au 31/03/2017 de 10h à 16h</span>
+                        </div>
+</div>
+
+<div class="form-group">
+                        <label for="uType" class="col-sm-3 control-label">Qui :</label>
                         <div class="col-sm-4">
                             <span>Jacques Le corre (<i class="glyphicon ng-scope glyphicon-star" i/><i class="glyphicon ng-scope glyphicon-star" i/><i class="glyphicon ng-scope glyphicon-star" i/><i class="glyphicon ng-scope glyphicon-star" i/><i class="glyphicon ng-scope glyphicon-star-empty" i/>)</span>
                             
@@ -44,15 +53,15 @@
 </div>
 
 <div class="form-group">
-                        <label for="uType" class="col-sm-3 control-label">Prix*:</label>
+                        <label for="uType" class="col-sm-3 control-label">Prix :</label>
                         <div class="col-sm-4">
-                            <span>4 € * 2 jour = <b>8 €</b></span>
+                            <span><b>72 €</b></span>
                         </div>
 </div>
 
 
 <div class="form-group">
-                        <label for="uType" class="col-sm-3 control-label">Assurance:</label>
+                        <label for="uType" class="col-sm-3 control-label">Assurance :</label>
                         <div class="col-sm-4">
                            <img src="/images/AXA_Logo.png" style="width:40px; height:40px;" /> 
                         </div>
@@ -71,7 +80,7 @@
  </div>
  
  <div ng-if="vm.validated">
-     <p class="text-center" style="font-size:2em;">Echange entre "Imen Necib"" et "Jacques Le corre"" validé!</p>
+     <p class="text-center" style="font-size:2em;">Echange entre "Imen Necib" et "Jacques Le corre" validé!</p>
        <p class="text-center" ><button type="button" class="btn btn-default" ng-click="vm.goHome()">Retour page acceuil</button></p>
      </div>
 

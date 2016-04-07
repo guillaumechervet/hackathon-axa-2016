@@ -7,7 +7,7 @@ var oeup;
             $log.info("AddBienController called");
             vm.Biens = [];
             vm.navAdd = function () {
-                $location.path('/proposer/ajouter');
+                $location.path('/proposer');
             };
         }
         return AddBienController;

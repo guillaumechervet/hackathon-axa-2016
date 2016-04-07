@@ -1,0 +1,30 @@
+Pour lancer le serveur:
+
+
+https://docs.asp.net/en/latest/getting-started/installing-on-windows.html
+
+Il faut lancer cette commande:
+@powershell -NoProfile -ExecutionPolicy unrestricted -Command "&{$Branch='dev';iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.ps1'))}
+Puis
+dnvm upgrade -r coreclr
+ensuite il faut aller dans le répertoire : 
+"OeUp.Project.Web"
+jouer le commande (il faut au préalable node.js d'installer)
+npm install
+puis
+npm install -g grunt-cli
+
+puis
+npm install -g bower
+
+bower install
+grunt bower
+grunt
+
+puis 
+dnu-restore
+
+pour lancer le site:
+grunt pour trvailler angular (console1)
+dnx web pour lancer le serveur (console2)
+

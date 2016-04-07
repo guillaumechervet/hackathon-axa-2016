@@ -18,7 +18,7 @@ module oeup {
             vm.Biens = [];            
             
             vm.navAdd = function(){
-                $location.path('/proposer/ajouter');
+                $location.path('/proposer');
             }
         }
     }
