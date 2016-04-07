@@ -11,6 +11,8 @@ module oeup {
     export class ProposeController {
          public Biens : Array<IBien>;
          public navAdd : Function;
+         public edit : Function;
+         public remove : Function;
           
         constructor($scope: any, $location: ng.ILocationService, $log: ng.ILogService) {
             var vm = this;
@@ -26,7 +28,7 @@ module oeup {
                 Frequence : 'Chaque jour',
                 MainPhoto : 'http://localhost:5000/images/Desert.jpg',
                 Description: 'Ce parking est à louer pendant mes horaires de travail' 
-            });
+            })
             vm.Biens.push({
                 Photos: ["",""],
                 Titre: 'Connexion wifi',
@@ -37,7 +39,7 @@ module oeup {
                 Frequence : 'Chaque jour',
                 MainPhoto : 'http://localhost:5000/images/Hydrangeas.jpg',
                 Description: 'Ce parking est à louer pendant mes horaires de travail' 
-            });
+            })
             vm.Biens.push({
                 Photos: ["",""],
                 Titre: 'Parking',
@@ -48,11 +50,19 @@ module oeup {
                 Frequence : 'Chaque jour',
                 MainPhoto : 'http://localhost:5000/images/Jellyfish.jpg',
                 Description: 'Ce parking est à louer pendant mes horaires de travail' 
-            });
+            })
             
             
             vm.navAdd = function(){
                 $location.path('/proposer/ajouter');
+            }
+            
+            vm.edit = function(){
+                $location.path('/proposer/modifier');
+            }
+            
+            vm.remove = function(){
+                $location.path('/proposer');
             }
         }
     }
