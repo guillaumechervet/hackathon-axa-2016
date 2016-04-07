@@ -2,14 +2,13 @@
     <ol class="breadcrumb">
     <li><a href="/">Accueil</a></li>
     <li><a href="/rechercher">Rechercher</a></li>
-    <li class="active">Ajout bien</li>
+    <li class="active">Ma recherche</li>
     </ol>
 </script>
 <div class="row">
 <div ng-include="'breadcrumbResult.html'"></div>   
-<h1>Resultats de la recherche</h1>
+<h1>Ma recherche</h1>
    
-
 
 <div class="resultDiv">
     <div class="" style="padding-right: 0;" >
@@ -27,7 +26,7 @@
             <div class="form-group" mw-container="form.uOu">
                 <label class="control-label">Ou* : </label>
                 <div class="">
-                    <input type="text" name="uOu" ng-model="vm.Model.Ou" class="form-control" mw-validate="vm.Rules.Ou" />
+                    <input type="text" name="uOu" ng-model="vm.Model.Ou" class="form-control" mw-validate="vm.Rules.Ou" g-places-autocomplete/>
                 </div>
             </div>
         </div>

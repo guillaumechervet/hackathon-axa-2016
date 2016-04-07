@@ -17,10 +17,11 @@ var oeup;
                 "Co-voiturage",
                 "Voiture"
             ];
-            vm.Model = { Type: "Parking à la journée", Ou: "Paris" };
+            vm.Model = { Type: "Parking à la journée", Ou: "Paris, France" };
             vm.objects = [{
                     img: "http://www.lettre-gratuite.fr/files/2013/03/place-parking.jpg",
-                    texte: "Place sur parking privé, idéal pour se garer au webcenter de Lille.<br />Disponible du 28/03/2016 au 31/03/2017 de 10h à 16h.",
+                    texte: "Place sur parking privé, idéal pour se garer au webcenter de Lille.",
+                    dispo: "Disponible du 28/03/2016 au 31/03/2017 de 10h à 16h.",
                     icon: '/images/72orange.png',
                     price: 72,
                     id: 1,
@@ -31,7 +32,8 @@ var oeup;
                 },
                 {
                     img: "http://img0.gtsstatic.com/faits-divers/mal-foutue-cette-place-de-parking_646_w620.jpg",
-                    texte: "Place à l'ombre d'un arbre<br />Disponible du 28/03/2016 au 29/04/2016 de 10h à 11h.",
+                    texte: "Place à l'ombre d'un arbre.",
+                    dispo: "Disponible du 28/03/2016 au 29/04/2016 de 10h à 11h.",
                     icon: '/images/80orange.png',
                     price: 80,
                     id: 2,
