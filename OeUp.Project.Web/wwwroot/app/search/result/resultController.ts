@@ -37,7 +37,7 @@ module oeup {
             
             vm.objects = [{
                 img :"http://www.lettre-gratuite.fr/files/2013/03/place-parking.jpg",
-                texte : "Place sur parking privé, idéal pour se garer au webcenter de Lille",
+                texte : "Place sur parking privé, idéal pour se garer au webcenter de Lille.<br />Disponible du 28/03/2016 au 31/03/2017 de 10h à 16h.",
                 icon:'/images/72orange.png',
                 price :72,
                
@@ -49,7 +49,7 @@ module oeup {
             },
             {
                 img :"http://img0.gtsstatic.com/faits-divers/mal-foutue-cette-place-de-parking_646_w620.jpg",
-                texte : "Place à l'ombre d'un arbre",
+                texte : "Place à l'ombre d'un arbre<br />Disponible du 28/03/2016 au 29/04/2016 de 10h à 11h.",
                 icon:'/images/80orange.png',
                 price :80,
                  id:2,
