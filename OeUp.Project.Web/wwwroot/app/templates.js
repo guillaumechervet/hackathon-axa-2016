@@ -99,7 +99,7 @@
     "\n" +
     "    <li class=\"active\">Ajout bien</li>\r" +
     "\n" +
-    "    </ol></script><div class=\"row\"><div ng-include=\"'breadcrumbResult.html'\"></div><h1>Resultats recherche</h1><div class=\"row\"><div class=\"col-xs-6 col-md-4\"><div ng-repeat=\"object in vm.objects\" ng-class=\"object.class\"><span height=\"120px\"><img ng-src=\"{{object.img}}\" with=\"120px\" height=\"120px\"></span> <span>{{object.texte}}</span> <span>{{object.price}} €</span></div></div><div class=\"col-xs-12 col-md-8\"><div ui-gmap-google-map id=\"map-regie\" center=\"vm.map.center\" zoom=\"vm.map.zoom\" width=\"400px\"><ui-gmap-markers models=\"vm.map.pointList\" coords=\"'position'\" idkey=\"'id'\" click=\"click\" events=\"vm.map.markers2Events\"></ui-gmap-markers></div></div></div><div ng-include=\"'breadcrumbResult.html'\"></div></div>"
+    "    </ol></script><div class=\"row\"><div ng-include=\"'breadcrumbResult.html'\"></div><h1>Resultats recherche</h1><div class=\"row\"><div class=\"col-xs-6 col-md-4\"><div ng-repeat=\"object in vm.objects\" ng-class=\"object.class\" ng-mouseover=\"object.mouseover()\" ng-mouseout=\"object.mouseout()\"><span height=\"120px\"><img ng-src=\"{{object.img}}\" with=\"120px\" height=\"120px\"></span> <span>{{object.texte}}</span> <span>{{object.price}} €</span></div></div><div class=\"col-xs-12 col-md-8\"><div ui-gmap-google-map id=\"map-regie\" center=\"vm.map.center\" zoom=\"vm.map.zoom\" width=\"400px\"><ui-gmap-markers models=\"vm.map.pointList\" coords=\"'position'\" idkey=\"'id'\" click=\"click\" events=\"vm.map.markers2Events\" icon=\"'icon'\"></ui-gmap-markers></div></div></div><div ng-include=\"'breadcrumbResult.html'\"></div></div>"
   );
 
 
